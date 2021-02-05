@@ -36,4 +36,4 @@ def delete(id):
 def update(guest):
     sql = "UPDATE guests SET (first_name, last_name) = (%s, %s) WHERE id = %s"
     values = [guest.first_name, guest.last_name, guest.id]
-    run_sql(Sql, values)
+    run_sql(sql, values)

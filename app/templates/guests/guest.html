@@ -10,7 +10,11 @@
   <form action="/guests/{{guest.id}}/delete" method="POST">
     <input type="submit" value="Delete">
   </form>
+
+ 
   
 {% endfor %}
-  
+<div>
+  <a href="/guests/new"><button>New Guest</button></a>
+</div>
 {% endblock  %}

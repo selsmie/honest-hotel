@@ -24,7 +24,7 @@ def create_guest():
     return redirect('/guests')
 
 @guests_blueprint.route('/guests/<id>/edit')
-def edit_human(id):
+def edit_guest(id):
     guest = guest_repository.select(id)
     return render_template('guests/edit.html', guest=guest)
 

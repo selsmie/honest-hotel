@@ -2,6 +2,18 @@
 
 {% block content %}
 
-New guest entry
+<form action="/guests", method='POST'>
+  <div>
+    <div>
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" placeholder="First Name" autofocus>
+    </div>
+    <div>
+      <label for="last_name">First Name:</label>
+      <input type="text" id="last_name" name="last_name" placeholder="Last Name">
+    </div>
+    <input type="submit" value="Add Guest">
+  </div>
+</form>
   
 {% endblock  %}
