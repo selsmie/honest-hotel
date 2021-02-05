@@ -8,15 +8,15 @@ import repositories.guest_repository as guest_repository
 import repositories.room_repository as room_repository
 import repositories.reservation_repository as reservation_repository
 
-guest_1 = Guest("Rick", "Sanchez")
+guest_1 = Guest("Rick Sanchez")
 guest_repository.save(guest_1)
-guest_2 = Guest("Morty", "Smith")
+guest_2 = Guest("Morty Smith")
 guest_repository.save(guest_2)
-guest_3 = Guest("Summer", "Smith")
+guest_3 = Guest("Summer Smith")
 guest_repository.save(guest_3)
-guest_4 = Guest("Beth", "Smith")
+guest_4 = Guest("Beth Smith")
 guest_repository.save(guest_4)
-guest_5 = Guest("Jerry", "Smith")
+guest_5 = Guest("Jerry Smith")
 guest_repository.save(guest_5)
 
 room_1 = Room(1)

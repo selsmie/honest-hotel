@@ -19,9 +19,8 @@ def new_guest():
 # CREATE
 @guests_blueprint.route('/guests', methods=['POST'])
 def create_guest():
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
-    new_guest = Guest(first_name, last_name)
+    name = request.form['name']
+    new_guest = Guest(first_name, name)
     guest_repository.save(new_guest)
     return redirect('/guests')
 
@@ -40,9 +39,8 @@ def edit_guest(id):
 # UPDATE
 @guests_blueprint.route('/guests/<id>', methods=['POST'])
 def update_guest(id):
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
-    updated_guest = Guest(first_name, last_name, id)
+    name = request.form['name']
+    updated_guest = Guest(name, id)
     guest_repository.update(updated_guest)
     return redirect('/guests')
 

@@ -6,34 +6,23 @@
 
 <form action="/reservations", method='POST'>
   <div>
-    <!-- <div>
+    <div>
       <label for="date">Arrival Date</label>
       <input type="date" name="date" id="date">
-    </div> -->
+    </div>
     <div>
-     <label for="first">Name:</label>
-      <select name="first" id="first">
+     <label for="name">Select Name:</label>
+      <select name="name_id" id="name">
         {% for guest in guests %}
-          <option value="{{guest.id}}">
-            {{guest.first_name}}
-          </option>
-        {% endfor %}
-      </select>
-      <select name="last" id="last">
-        {% for guest in guests %}
-          <option value="{{guest.id}}">
-            {{guest.last_name}}
-          </option>
+          <option value="{{guest.id}}">{{guest.name}}</option>
         {% endfor %}
       </select>
     </div>
     <div>
       <label for="room">Room:</label>
-      <select name="room" id="room">
+      <select name="room_id" id="room">
         {% for room in rooms %}
-          <option value="{{room.id}}">
-            {{room.room_number}}
-          </option>
+          <option value="{{room.id}}">{{room.room_number}}</option>
         {% endfor %}
       </select>
     </div>

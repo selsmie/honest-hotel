@@ -4,12 +4,13 @@
 
 {% for reservation in reservations %}
   <p>Reservation Number: {{reservation.id}}</p>
-  <p>Guest Name: {{reservation.guest.first_name}} {{reservation.guest.last_name}}</p>
+  <p>Guest Name: {{reservation.guest.name}}</p>
+  <p>Arrival Date: {{reservation.date}}</p>
   <p>Room: {{reservation.room.room_number}}</p>
   <form action="/reservations/{{reservation.id}}/edit" value='edit'>
     <button>Edit</button>
   </form>
-  <form action="/reservations/{{reservation.id}}/edit" method="POST">
+  <form action="/reservations/{{reservation.id}}/delete" method="POST">
     <input type="submit" value="Delete">
   </form>
 

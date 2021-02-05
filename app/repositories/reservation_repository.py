@@ -28,7 +28,7 @@ def select_all():
 def select(id):
     reservation = None
     sql = "SELECT * FROM reservations WHERE id = %s"
-    value = [id]
+    values = [id]
     result = run_sql(sql, values)
     if reservation is not None:
         guest = guest_repository.select(result['guest_id'])

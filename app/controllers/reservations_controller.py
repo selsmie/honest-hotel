@@ -24,15 +24,11 @@ def new_reservation():
 # CREATE
 @reservations_blueprint.route('/reservations', methods=['POST'])
 def create_reservation():
-    first = request.form['first']
-    last = request.form['last']
-    room = request.form['room']
-    first_name = guest_repository.select(first)
-    last_name = guest_repository.select(last)
-    guest = Guest(first, last_name)
-    guest_name = guest_repository.save(guest)
-    room_number = room_repository.select(room)
-    new_reservation = Reservation(guest_name, room)
+    name_id = request.form['name_id']
+    room_id = request.form['room_id']
+    guest = guest_repository.select(name_id)
+    room = room_repository.select(room_id)
+    new_reservation = Reservation(guest, room)
     reservation_repository.save(new_reservation)
     return redirect('/reservations')
 

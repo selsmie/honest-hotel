@@ -7,7 +7,7 @@ class TestGuest(unittest.TestCase):
         self.guest_2 = Guest("Rick", "Sanchez")
 
     def test_guest_first_name(self):
-        self.assertEqual("Simon", self.guest_1.first_name)
+        self.assertEqual("Simon Elsmie", self.guest_1.name)
 
     def test_guest_last_name(self):
-        self.assertEqual("Sanchez", self.guest_2.last_name)
+        self.assertEqual("Rick Sanchez", self.guest_2.name)

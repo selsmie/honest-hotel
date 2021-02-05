@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for guest in guests %}
-  <p>{{guest.first_name}} {{guest.last_name}}</p>
+  <p>{{guest.name}}</p>
   <form action="/guests/{{guest.id}}/edit" value='edit'>
     <button>Edit</button>
   </form>
