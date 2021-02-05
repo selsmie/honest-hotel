@@ -33,7 +33,7 @@ def select(id):
     if reservation is not None:
         guest = guest_repository.select(result['guest_id'])
         room = room_repository.select(result['room_id'])
-        reservation = Reservation[guest, room, result['id']]
+        reservation = Reservation(guest, room, result['id'])
     return reservation
 
 def delete(id):

@@ -20,7 +20,7 @@ def new_guest():
 @guests_blueprint.route('/guests', methods=['POST'])
 def create_guest():
     name = request.form['name']
-    new_guest = Guest(first_name, name)
+    new_guest = Guest(name)
     guest_repository.save(new_guest)
     return redirect('/guests')
 

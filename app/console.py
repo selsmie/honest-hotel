@@ -31,5 +31,11 @@ reservation_repository.save(reservation_1)
 reservation_2 = Reservation(guest_2, room_3)
 reservation_repository.save(reservation_2)
 
+reservation_2 = Reservation(guest_4, room_3, 2)
+reservation_repository.update(reservation_2)
+
+
+
+
 
 pdb.set_trace()

@@ -12,7 +12,7 @@
     </div>
     <div>
      <label for="name">Select Name:</label>
-      <select name="name_id" id="name">
+      <select name="guest_id" id="name">
         {% for guest in guests %}
           <option value="{{guest.id}}">{{guest.name}}</option>
         {% endfor %}

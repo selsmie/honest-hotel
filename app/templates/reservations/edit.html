@@ -2,20 +2,34 @@
 
 {% block content %}
 
+<h2>Update Reservation</h2>
+
 <form action="/reservations/{{ reservation.id }}", method='POST'>
   <div>
     <div>
-      <label for="">Guest</label>
-     
+      <label for="date">Arrival Date:</label>
+      <input type="date" name="date" id="date" required>
     </div>
     <div>
-      <label for="">Room</label>
-  
+      <label for="name">Guest:</label>
+      <select name="guest_id" id="name">
+        {% for guest in guests %}
+          <option value="{{guest.id}}">{{guest.name}}</option>
+        {% endfor %}
+      </select>
     </div>
-    <input type="submit" value="Save Changes">
+    <div>
+      <label for="room">Room:</label>
+      <select name="room_id" id="room">
+        {% for room in rooms %}
+          <option value="{{room.id}}">{{room.room_number}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <input type="submit" value='Save Changes'>
   </div>
 </form>
- 
+
   
 
 {% endblock  %}

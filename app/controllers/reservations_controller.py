@@ -24,9 +24,9 @@ def new_reservation():
 # CREATE
 @reservations_blueprint.route('/reservations', methods=['POST'])
 def create_reservation():
-    name_id = request.form['name_id']
+    guest_id = request.form['guest_id']
+    guest = guest_repository.select(guest_id)
     room_id = request.form['room_id']
-    guest = guest_repository.select(name_id)
     room = room_repository.select(room_id)
     new_reservation = Reservation(guest, room)
     reservation_repository.save(new_reservation)
@@ -56,7 +56,6 @@ def update_reservation(id):
     updated_reservation = Reservation(guest, room, id)
     reservation_repository.update(updated_reservation)
     return redirect('/reservations')
-
 
 # DELETE
 @reservations_blueprint.route('/reservations/<id>/delete', methods=['POST'])
