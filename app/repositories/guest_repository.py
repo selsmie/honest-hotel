@@ -22,7 +22,7 @@ def select(id):
     values =[id]
     result = run_sql(sql, values)[0]
     guest = Guest(result['first_name'], result['last_name'], result['id'])
-    return Guest
+    return guest
 
 def delete_all():
     sql = "DELETE FROM guests"
