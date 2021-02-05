@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>New Room</h3>
+
+<form action="/rooms", method='POST'>
+  <div>
+    <div>
+      <label for="number">Room Number:</label>
+      <input type="text" id="number" name="number" placeholder="Room Number" autofocus>
+    </div>
+    <input type="submit" value="Add Room">
+  </div>
+</form>
+  
+{% endblock  %}

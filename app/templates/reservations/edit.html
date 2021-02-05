@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/reservations/{{ reservation.id }}", method='POST'>
+  <div>
+    <div>
+      <label for="">Guest</label>
+     
+    </div>
+    <div>
+      <label for="">Room</label>
+  
+    </div>
+    <input type="submit" value="Save Changes">
+  </div>
+</form>
+ 
+  
+
+{% endblock  %}

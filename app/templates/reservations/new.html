@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>New Reservation</h3>
+
+<form action="/reservations", method='POST'>
+  <div>
+    <!-- <div>
+      <label for="date">Arrival Date</label>
+      <input type="date" name="date" id="date">
+    </div> -->
+    <div>
+     <label for="first">Name:</label>
+      <select name="first" id="first">
+        {% for guest in guests %}
+          <option value="{{guest.id}}">
+            {{guest.first_name}}
+          </option>
+        {% endfor %}
+      </select>
+      <select name="last" id="last">
+        {% for guest in guests %}
+          <option value="{{guest.id}}">
+            {{guest.last_name}}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="room">Room:</label>
+      <select name="room" id="room">
+        {% for room in rooms %}
+          <option value="{{room.id}}">
+            {{room.room_number}}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <input type="submit" value="Create Reservation">
+  </div>
+</form>
+
+{% endblock  %}

@@ -25,7 +25,7 @@ def create_guest():
     guest_repository.save(new_guest)
     return redirect('/guests')
 
-# SHOW?????
+# SHOW
 @guests_blueprint.route('/guests/<id>')
 def show_guest(id):
     guest = guest_repository.select(id)

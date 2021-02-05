@@ -15,6 +15,6 @@ CREATE TABLE rooms (
 
 CREATE TABLE reservations (
     id SERIAL PRIMARY KEY,
-    name_id INT REFERENCES guests(id),
-    room_id INT REFERENCES rooms(id)
+    guest_id INT REFERENCES guests(id) ON DELETE CASCADE,
+    room_id INT REFERENCES rooms(id) ON DELETE CASCADE
 );

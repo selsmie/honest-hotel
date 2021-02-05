@@ -1,6 +1,6 @@
 import unittest
 
-from models.resevation import Reservation
+from models.reservation import Reservation
 from models.guest import Guest
 from models.room import Room
 

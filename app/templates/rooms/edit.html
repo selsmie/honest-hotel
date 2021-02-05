@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+<h2>Update Room Features</h2>
+
+<form action="/rooms/{{ room.id }}", method='POST'>
+  <div>
+    <div>
+      <label for="number">Room Number:</label>
+      <input type="number" name="number" id="number" value="{{ room.room_number }}" placeholder="Room Number" required autofocus unique>
+    </div>
+    <input type="submit" value="Save Changes">
+  </div>
+</form>
+
+{% endblock  %}
+

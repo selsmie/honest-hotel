@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for room in rooms %}
+  <p>Room: {{room.room_number}}</p>
+  <form action="/rooms/{{room.id}}/edit" value='edit'>
+    <button>Edit</button>
+  </form>
+  <form action="/rooms/{{room.id}}/delete" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+
+ 
+  
+{% endfor %}
+<hr>
+<div>
+  <a href="/rooms/new"><button>New Room</button></a>
+</div>
+{% endblock  %}

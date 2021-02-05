@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for reservation in reservations %}
+  <p>Reservation Number: {{reservation.id}}</p>
+  <p>Guest Name: {{reservation.guest.first_name}} {{reservation.guest.last_name}}</p>
+  <p>Room: {{reservation.room.room_number}}</p>
+  <form action="/reservations/{{reservation.id}}/edit" value='edit'>
+    <button>Edit</button>
+  </form>
+  <form action="/reservations/{{reservation.id}}/edit" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+
+ 
+  
+{% endfor %}
+<hr>
+<div>
+  <a href="/reservations/new"><button>New Reservation</button></a>
+</div>
+{% endblock  %}

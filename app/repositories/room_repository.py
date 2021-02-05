@@ -3,7 +3,7 @@ from models.room import Room
 import repositories.room_repository as room_repository
 
 def save(room):
-    sql = "INSERT INTO rooms (room_number) VALUES %s RETURNING id"
+    sql = "INSERT INTO rooms (room_number) VALUES (%s) RETURNING id"
     values = [room.room_number]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -35,7 +35,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(room):
-    sql = "UPDATE rooms SET (room_number) = (%s) WHERE id = %s"
+    sql = "UPDATE rooms SET room_number = %s WHERE id = %s"
     values = [room.room_number, room.id]
     run_sql(sql, values)
     

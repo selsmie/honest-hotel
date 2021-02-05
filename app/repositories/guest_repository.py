@@ -12,15 +12,17 @@ def select_all():
     guests = []
     sql = "SELECT * FROM guests"
     results = run_sql(sql)
-    for result in results:
-        guest = Guest(result['first_name'], result['last_name'], result['id'])
+    for row in results:
+        guest = Guest(row['first_name'], row['last_name'], row['id'])
         guests.append(guest)
     return guests
 
 def select(id):
+
     sql = "SELECT * FROM guests WHERE id = %s"
     values =[id]
     result = run_sql(sql, values)[0]
+
     guest = Guest(result['first_name'], result['last_name'], result['id'])
     return guest
 
