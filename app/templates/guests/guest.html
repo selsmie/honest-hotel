@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-{% for guest in guests %}
-  <p>{{guest.name}}</p>
-  <p>Stays: {{guest.stays}}</p>
-  <form action="/guests/{{guest.id}}/edit" value='edit'>
-    <button>Edit</button>
-  </form>
-  <form action="/guests/{{guest.id}}/delete" method="POST">
-    <input type="submit" value="Delete">
-  </form>
-
- 
-  
-{% endfor %}
 <hr>
 <div>
   <a href="/guests/new"><button>New Guest</button></a>
 </div>
+<hr>
+<main class='content'>
+  {% for guest in guests %}
+    <section class='names'>
+      <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+      <h4>{{guest.name}}</h4>
+      <p>Stays: {{guest.stays}}</p>
+      <div class='change-buttons'>
+        <form action="/guests/{{guest.id}}/edit" value='edit'>
+          <button>Edit</button>
+        </form>
+        <form action="/guests/{{guest.id}}/delete" method="POST">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </section>
+    
+  {% endfor %}
+</main>
+<hr>
+<div>
+  <a href="/guests/new"><button>New Guest</button></a>
+</div>
+<hr>
 {% endblock  %}

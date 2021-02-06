@@ -5,24 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='guest.css') }}">
   <title>Honest Hotel</title>
 </head>
 <body>
-  <a href="/"><button>Home</button></a>
-  <a href="/guests"><button>Guests</button></a>
-  <a href="/reservations"><button>All Reservations</button></a>
-  <a href="/rooms"><button>Rooms</button></a>
-  <a href="/reservations/arrivals"><button>Arrivals</button></a>
-  <a href="/reservations/inhouse"><button>In House</button></a>
+  <header>
+    <div id='logo'><img src="https://elementalwellnesscoaching.files.wordpress.com/2013/06/honest.gif" alt=""></div>
+  </header>
+  <nav class='quick-links'>
+    <a href="/"><button>Home</button></a>
+    <a href="/guests"><button>Guests</button></a>
+    <a href="/reservations"><button>All Reservations</button></a>
+    <a href="/rooms"><button>Rooms</button></a>
+    <a href="/reservations/arrivals"><button>Arrivals</button></a>
+    <a href="/reservations/inhouse"><button>In House</button></a>
+  </nav>
+
   {% block content %}
     
   {% endblock  %}
-  <a href="/"><button>Home</button></a>
-  <a href="/guests"><button>Guests</button></a>
-  <a href="/reservations"><button>All Reservations</button></a>
-  <a href="/rooms"><button>Rooms</button></a>
-  <a href="/reservations/arrivals"><button>Arrivals</button></a>
-  <a href="/reservations/inhouse"><button>In House</button></a>
+  <footer>
+    <nav class='quick-links'>
+      <a href="/"><button>Home</button></a>
+      <a href="/guests"><button>Guests</button></a>
+      <a href="/reservations"><button>All Reservations</button></a>
+      <a href="/rooms"><button>Rooms</button></a>
+      <a href="/reservations/arrivals"><button>Arrivals</button></a>
+      <a href="/reservations/inhouse"><button>In House</button></a>
+    </nav>
+  </footer>
+
   
 </body>
 </html>

@@ -1,0 +1,45 @@
+body {
+    background-color:rgb(36, 96, 124);
+    height: 600px;
+}
+
+#logo {
+    display: grid;
+}
+
+#logo > img {
+    height: 100px;
+    justify-self: center;
+    padding: 10px;
+}
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+}
+
+.quick-links > a {
+    padding: 0px 5px;
+}
+
+.quick-links > a > button {
+    width: 130px;
+    border-radius: 12px;
+    height: 40px;
+    font-weight: bolder;
+}
+
+.quick-links > a > button:hover {
+    background-color: rgb(69, 148, 158);
+}
+
+#title {
+    display: grid;
+    text-align: center;
+    align-content: center;
+    height: 100%;
+    margin: 5px;
+
+    color: white;
+    border: 3px solid black;
+}
