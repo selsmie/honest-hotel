@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h2>Update Guest Profile</h2>
-
-<form action="/guests/{{ guest.id }}", method='POST'>
-  <div>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="{{ guest.name }}" placeholder="Name" required autofocus>
+<main class='content'>
+  <h3>Update Guest Profile</h3>
+  <form action="/guests/{{ guest.id }}", method='POST'>
+    <div id='new-name'>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ guest.name }}" placeholder="Name" required autofocus>
+      </div>
+      <div class='new-input'>
+        <input type="submit" value="Save Changes">
+      </div>
     </div>
-    <input type="submit" value="Save Changes">
-  </div>
-</form>
-  
+  </form>
+</main>
 {% endblock  %}

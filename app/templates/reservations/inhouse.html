@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h3>In House Reservations</h3>
+<main class='res-content'>
 
 {% for reservation in reservations %}
-  <p>Res #: {{reservation.id}} <span>{{reservation.status}}</span></p>
+<section class='details-inh'>
+  <p id='res-number'>Res #: {{reservation.id}} - <span>{{reservation.status}}</span></p>
   <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
-  <p>Name: {{reservation.guest.name}}</p>
-  <p>Stays: {{reservation.guest.stays}}</p>
-  <p>Arrival: {{reservation.arrival_date}}</p>
-  <p>Departure: {{reservation.departure_date}}</p>
-  <p>Room: {{reservation.room.room_number}}</p>
-
+  <p id='res-name'>Name: {{reservation.guest.name}}</p>
+  <p id='res-stay'>Stays: {{reservation.guest.stays}}</p>
+  <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
+  <p id='res-dep'>Departure: {{reservation.departure_date}}</p>
+  <p id='res-room'>Room: {{reservation.room.room_number}}</p>
+  <div class='res-buttons'>
+    <form action="/reservations/{{reservation.id}}/edit" value='edit'>
+      <button>Edit</button>
+    </form>
+  </div>
+</section>
 
 
  
   
 {% endfor %}
-  
+</main>
 {% endblock  %}

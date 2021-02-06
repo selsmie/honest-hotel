@@ -1,0 +1,104 @@
+.res-content {
+    display: grid;
+    overflow: scroll;
+    height: 600px;
+    justify-content: center;
+    border: 3px solid black;
+    color: white;
+    margin: 5px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 3;
+    grid-template-areas: 
+    "num arr edit"
+    "name dep img"
+    "stay room del";
+    margin: 10px 0px;
+    width: 100%;
+    column-gap: 10px;
+    border: 1px black solid;
+    padding: 10px;
+    height: max-content;
+}
+
+.details-inh {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 3;
+    grid-template-areas: 
+    "img num arr arr"
+    "img name dep edit"
+    "img stay room edit";
+    margin: 10px 0px;
+    width: 100%;
+    column-gap: 10px;
+    border: 1px black solid;
+    padding: 10px;
+    height: max-content;
+}
+
+.details-inh > img {
+    height: 100px;
+    grid-area: img;
+    align-self: center;
+}
+
+.details-inh > p {
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+.details > p {
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+#res-number {
+    grid-area: num;
+}
+
+#res-name {
+    grid-area: name;
+}
+
+#res-stay {
+    grid-area: stay;
+}
+
+#res-arr {
+    grid-area: arr;
+}
+
+#res-dep {
+    grid-area: dep;
+}
+
+#res-room {
+    grid-area: room;
+}
+
+.res-buttons > form > button {
+    grid-area: edit;
+    border-radius: 12px;
+    width: 60px;
+    padding: 10px 0px;
+}
+
+.res-buttons > form > input {
+    grid-area: del;
+    border-radius: 12px;
+    width: 60px;
+}
+
+.res-buttons > form > button:hover {
+    background-color: rgb(69, 148, 158);
+    cursor: pointer; 
+}
+
+.res-buttons > form > input:hover {
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+}

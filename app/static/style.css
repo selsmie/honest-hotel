@@ -1,6 +1,6 @@
 body {
     background-color:rgb(36, 96, 124);
-    height: 600px;
+    height: 601px;
 }
 
 #logo {
@@ -15,6 +15,7 @@ body {
 
 .quick-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -31,6 +32,7 @@ body {
 
 .quick-links > a > button:hover {
     background-color: rgb(69, 148, 158);
+    cursor: pointer;
 }
 
 #title {
@@ -39,7 +41,7 @@ body {
     align-content: center;
     height: 100%;
     margin: 5px;
-
+    padding: 30px;
     color: white;
     border: 3px solid black;
 }

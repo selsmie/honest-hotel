@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h3>New Reservation</h3>
-
-<form action="/guests", method='POST'>
-  <div>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Name" autofocus>
+<main class="content">
+  <h3>New Guest</h3>
+  <form action="/guests", method='POST'>
+    <div id='new-name'>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" autofocus>
+      </div>
+      <div class='new-input'>
+        <input type="submit" value="Add Guest">
+      </div>
     </div>
-    <input type="submit" value="Add Guest">
-  </div>
-</form>
-  
+  </form>
+</main>
 {% endblock  %}
