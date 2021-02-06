@@ -6,10 +6,12 @@
 
 <form action="/reservations/{{ reservation.id }}", method='POST'>
   <div>
-    <!-- <div>
-      <label for="date">Arrival Date:</label>
-      <input type="date" name="date" id="date" required>
-    </div> -->
+    <div>
+      <label for="arrival_date">Arrival Date</label>
+      <input type="date" name="arrival_date" id="arrival_date" required>
+      <label for="departure_date">Departure Date</label>
+      <input type="date" name="departure_date" id="departure_date" required>
+    </div>
     <div>
       <label for="name">Guest:</label>
       <select name="guest_id" id="name">

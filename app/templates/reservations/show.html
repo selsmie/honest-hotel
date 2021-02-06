@@ -2,6 +2,19 @@
 
 {% block content %}
 
-testing
+{% for reservation in reservations %}
+  <p>Res #: {{reservation.id}} <span>{{reservation.status}}</span></p>
+  <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+  <p>Name: {{reservation.guest.name}}</p>
+  <p>Stays: {{reservation.guest.stays}}</p>
+  <p>Arrival: {{reservation.arrival_date}}</p>
+  <p>Departure: {{reservation.departure_date}}</p>
+  <p>Room: {{reservation.room.room_number}}</p>
+
+
+
+ 
+  
+{% endfor %}
   
 {% endblock  %}

@@ -18,5 +18,6 @@ CREATE TABLE reservations (
     guest_id INT REFERENCES guests(id) ON DELETE CASCADE,
     room_id INT REFERENCES rooms(id),
     arrival_date DATE NOT NULL,
-    departure_date DATE NOT NULL
+    departure_date DATE NOT NULL,
+    status VARCHAR(255)
 );

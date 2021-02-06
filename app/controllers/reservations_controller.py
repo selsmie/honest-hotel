@@ -30,7 +30,8 @@ def create_reservation():
     room = room_repository.select(room_id)
     arrival_date = request.form['arrival_date']
     departure_date = request.form['departure_date']
-    new_reservation = Reservation(guest, room, arrival_date, departure_date)
+    status = request.form['status']
+    new_reservation = Reservation(guest, room, arrival_date, departure_date, status)
     reservation_repository.save(new_reservation)
     return redirect('/reservations')
 
@@ -55,7 +56,9 @@ def update_reservation(id):
     guest = guest_repository.select(guest_id)
     room_id = request.form['room_id']
     room = room_repository.select(room_id)
-    updated_reservation = Reservation(guest, room, id)
+    arrival_date = request.form['arrival_date']
+    departure_date = request.form['departure_date']
+    updated_reservation = Reservation(guest, room, arrival_date, departure_date, id)
     reservation_repository.update(updated_reservation)
     return redirect('/reservations')
 
@@ -64,3 +67,9 @@ def update_reservation(id):
 def delete_reservation(id):
     reservation_repository.delete(id)
     return redirect('/reservations')
+
+# In House
+@ reservations_blueprint.route('/reservations/inhouse')
+def show_in_house():
+    reservations = reservation_repository.in_house()
+    return render_template('reservations/show.html', reservations=reservations)
