@@ -4,6 +4,7 @@
 
 {% for guest in guests %}
   <p>{{guest.name}}</p>
+  <p>Stays: {{guest.stays}}</p>
   <form action="/guests/{{guest.id}}/edit" value='edit'>
     <button>Edit</button>
   </form>

@@ -28,7 +28,9 @@ def create_reservation():
     guest = guest_repository.select(guest_id)
     room_id = request.form['room_id']
     room = room_repository.select(room_id)
-    new_reservation = Reservation(guest, room)
+    arrival_date = request.form['arrival_date']
+    departure_date = request.form['departure_date']
+    new_reservation = Reservation(guest, room, arrival_date, departure_date)
     reservation_repository.save(new_reservation)
     return redirect('/reservations')
 

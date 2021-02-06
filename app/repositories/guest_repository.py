@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.guest import Guest
 
 def save(guest):
-    sql = "INSERT INTO guests (name) VALUES (%s) RETURNING id"
-    values = [guest.name]
+    sql = "INSERT INTO guests (name, stays) VALUES (%s, %s) RETURNING id"
+    values = [guest.name, guest.stays]
     results = run_sql(sql, values)
     id = results[0]['id']
     guest.id = id
@@ -13,7 +13,7 @@ def select_all():
     sql = "SELECT * FROM guests"
     results = run_sql(sql)
     for row in results:
-        guest = Guest(row['name'], row['id'])
+        guest = Guest(row['name'], row['stays'], row['id'])
         guests.append(guest)
     return guests
 
@@ -23,7 +23,7 @@ def select(id):
     values =[id]
     result = run_sql(sql, values)[0]
 
-    guest = Guest(result['name'], result['id'])
+    guest = Guest(result['name'], result['stays'], result['id'])
     return guest
 
 def delete_all():
@@ -36,6 +36,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(guest):
-    sql = "UPDATE guests SET name = %s WHERE id = %s"
-    values = [guest.name, guest.id]
+    sql = "UPDATE guests SET (name, stays) = (%s, %s) WHERE id = %s"
+    values = [guest.name, guest.stays, guest.id]
     run_sql(sql, values)

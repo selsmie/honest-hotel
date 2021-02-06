@@ -7,8 +7,10 @@
 <form action="/reservations", method='POST'>
   <div>
     <div>
-      <label for="date">Arrival Date</label>
-      <input type="date" name="date" id="date">
+      <label for="arrival_date">Arrival Date</label>
+      <input type="date" name="arrival_date" id="arrival_date" required>
+      <label for="departure_date">Departure Date</label>
+      <input type="date" name="departure_date" id="departure_date" required>
     </div>
     <div>
      <label for="name">Select Name:</label>
@@ -24,6 +26,14 @@
         {% for room in rooms %}
           <option value="{{room.id}}">{{room.room_number}}</option>
         {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="status">Status</label>
+      <select name="status" id="status">
+        <option value="incoming">Incoming</option>
+        <option value="checked_in">Checked In</option>
+        <option value="departed">Departed</option>
       </select>
     </div>
     <input type="submit" value="Create Reservation">

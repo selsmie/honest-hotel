@@ -6,8 +6,8 @@ import repositories.room_repository as room_repository
 import repositories.guest_repository as guest_repository
 
 def save(reservation):
-    sql = "INSERT INTO reservations (guest_id, room_id) VALUES (%s, %s) RETURNING id"
-    values = [reservation.guest.id, reservation.room.id]
+    sql = "INSERT INTO reservations (guest_id, room_id, arrival_date, departure_date) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [reservation.guest.id, reservation.room.id, reservation.arrival_date, reservation.departure_date]
     results = run_sql(sql, values)
     reservation.id = results[0]['id']
     return reservation
@@ -21,7 +21,7 @@ def select_all():
     for row in results:
         guest = guest_repository.select(row['guest_id'])
         room = room_repository.select(row['room_id'])
-        reservation = Reservation(guest, room, row['id'])
+        reservation = Reservation(guest, room, row['arrival_date'], row['departure_date'], row['id'])
         reservations.append(reservation)
     return reservations
 
@@ -33,7 +33,7 @@ def select(id):
     if reservation is not None:
         guest = guest_repository.select(result['guest_id'])
         room = room_repository.select(result['room_id'])
-        reservation = Reservation(guest, room, result['id'])
+        reservation = Reservation(guest, room, result['arrival_date'], result['departure_date'], result['id'])
     return reservation
 
 def delete(id):
@@ -42,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(reservation):
-    sql = "UPDATE reservations SET (guest_id, room_id) = (%s, %s) WHERE id = %s"
-    values = [reservation.guest.id, reservation.room.id, reservation.id]
+    sql = "UPDATE reservations SET (guest_id, room_id, arrival_date, departure_date) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [reservation.guest.id, reservation.room.id, reservation.arrival_date, reservation.departure_date, reservation.id]
     run_sql(sql, values)

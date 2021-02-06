@@ -3,9 +3,11 @@
 {% block content %}
 
 {% for reservation in reservations %}
-  <p>Reservation Number: {{reservation.id}}</p>
+  <p>Res No.: {{reservation.id}} <span>{{reservation.status}}</span></p>
   <p>Guest Name: {{reservation.guest.name}}</p>
-  <p>Arrival Date: {{reservation.date}}</p>
+  <p>Stays: {{reservation.guest.stays}}</p>
+  <p>Arrival Date: {{reservation.arrival_date}}</p>
+  <p>Departure Date: {{reservation.departure_date}}</p>
   <p>Room: {{reservation.room.room_number}}</p>
   <form action="/reservations/{{reservation.id}}/edit" value='edit'>
     <button>Edit</button>
