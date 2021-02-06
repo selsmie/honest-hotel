@@ -14,6 +14,11 @@ def reservations():
     reservations = reservation_repository.select_all()
     return render_template('reservations/reservation.html', reservations=reservations)
 
+@reservations_blueprint.route('/reservations/arrivals')
+def arrivals():
+    reservations = reservation_repository.arrivals()
+    return render_template('reservations/reservation.html', reservations=reservations)
+
 # NEW
 @reservations_blueprint.route('/reservations/new')
 def new_reservation():
@@ -34,12 +39,6 @@ def create_reservation():
     new_reservation = Reservation(guest, room, arrival_date, departure_date, status)
     reservation_repository.save(new_reservation)
     return redirect('/reservations')
-
-# SHOW
-@reservations_blueprint.route('/reservations/<id>')
-def show_reservation(id):
-    reservation = reservation_repository.select(id)
-    return render_template('reservations/show.html', reservation=reservation)
 
 # EDIT
 @reservations_blueprint.route('/reservations/<id>/edit')
@@ -72,4 +71,4 @@ def delete_reservation(id):
 @ reservations_blueprint.route('/reservations/inhouse')
 def show_in_house():
     reservations = reservation_repository.in_house()
-    return render_template('reservations/show.html', reservations=reservations)
+    return render_template('reservations/inhouse.html', reservations=reservations)

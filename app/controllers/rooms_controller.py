@@ -2,6 +2,7 @@ from flask import Flask, redirect, render_template, request, Blueprint
 
 from models.room import Room
 import repositories.room_repository as room_repository
+import repositories.reservation_repository as reservation_repository
 
 rooms_blueprint = Blueprint("rooms", __name__)
 

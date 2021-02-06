@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<hr>
+<div>
+  <a href="/reservations/new"><button>New Reservation</button></a>
+</div>
+<hr>
 {% for reservation in reservations %}
   <p>Res #: {{reservation.id}} <span>{{reservation.status}}</span></p>
   <p>Name: {{reservation.guest.name}}</p>
@@ -16,12 +20,10 @@
     <input type="submit" value="Delete">
   </form>
 
-
- 
-  
 {% endfor %}
 <hr>
 <div>
   <a href="/reservations/new"><button>New Reservation</button></a>
 </div>
+<hr>
 {% endblock  %}

@@ -46,6 +46,21 @@ def update(reservation):
     values = [reservation.guest.id, reservation.room.id, reservation.arrival_date, reservation.departure_date, reservation.status, reservation.id]
     run_sql(sql, values)
 
+def arrivals():
+    reservations = []
+
+    sql = "SELECT * FROM reservations WHERE status = %s"
+    values = ["Incoming"]
+    results = run_sql(sql, values)
+
+    for row in results:
+        guest = guest_repository.select(row['guest_id'])
+        room = room_repository.select(row['room_id'])
+        reservation = Reservation(guest, room, row['arrival_date'], row['departure_date'], row['status'], row['id'])
+        reservations.append(reservation)
+    return reservations
+
+
 def in_house():
     reservations = []
 

@@ -2,7 +2,15 @@
 
 {% block content %}
   
-Showing Room: {{room.room_number}}
+{% for reservation in reservations %}
+  <p>Room: {{reservation.room.room_number}}</p>
+  <p>Name: {{reservation.guest.name}}</p>
+
+
+
+ 
+  
+{% endfor %}
 
 {% endblock  %}
 
