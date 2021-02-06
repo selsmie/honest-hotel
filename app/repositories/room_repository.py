@@ -19,10 +19,12 @@ def select_all():
     return rooms
 
 def select(id):
+    room = None
     sql = "SELECT * FROM rooms WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    room = Room(result['room_number'], result['id'])
+    if result is not None:
+        room = Room(result['room_number'], result['id'])
     return room
 
 def delete_all():

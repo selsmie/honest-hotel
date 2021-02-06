@@ -29,8 +29,8 @@ def select(id):
     reservation = None
     sql = "SELECT * FROM reservations WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
-    if reservation is not None:
+    result = run_sql(sql, values)[0]
+    if result is not None:
         guest = guest_repository.select(result['guest_id'])
         room = room_repository.select(result['room_id'])
         reservation = Reservation(guest, room, result['arrival_date'], result['departure_date'], result['status'], result['id'])

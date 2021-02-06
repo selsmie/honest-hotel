@@ -18,12 +18,12 @@ def select_all():
     return guests
 
 def select(id):
-
+    guest = None 
     sql = "SELECT * FROM guests WHERE id = %s"
     values =[id]
     result = run_sql(sql, values)[0]
-
-    guest = Guest(result['name'], result['stays'], result['id'])
+    if result is not None:
+        guest = Guest(result['name'], result['stays'], result['id'])
     return guest
 
 def delete_all():

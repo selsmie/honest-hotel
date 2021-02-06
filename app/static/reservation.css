@@ -53,7 +53,7 @@
 
 .details > p {
     padding: 5px 10px;
-    margin: 0px;
+    margin: 5px;
 }
 
 #res-number {
@@ -70,10 +70,14 @@
 
 #res-arr {
     grid-area: arr;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #res-dep {
     grid-area: dep;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #res-room {
@@ -101,4 +105,27 @@
 .res-buttons > form > input:hover {
     background-color: rgb(255, 0, 0);
     cursor: pointer;
+}
+
+.content-new > form {
+    display: grid;
+    justify-content: center;
+}
+
+#new-res {
+    display: grid;
+    border: 1px black solid;
+    width: max-content;
+    margin: 5px;
+
+}
+
+#new-res > div {
+    padding: 5px
+}
+
+#new-res-button > input {
+    border-radius: 12px;
+    height: 30px;
+    width: auto;
 }

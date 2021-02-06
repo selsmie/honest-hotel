@@ -16,7 +16,7 @@
 
 #new-name {
     display: grid;
-    justify-items: end;
+    justify-items: center;
 }
 
 .new-input {
@@ -157,3 +157,12 @@
     background-color: rgb(255, 0, 0);
     cursor: pointer;
 } 
+
+.content-new {
+    text-align: center;
+    height: 600px;
+
+    border: 3px solid black;
+    color: white;
+    margin: 5px;
+}
