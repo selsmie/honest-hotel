@@ -10,7 +10,11 @@
 <main class="content">
 {% for room in rooms %}
 <div id='container'>
-  <p>Room: {{room.room_number}}</p>
+  <header>
+    <p>Room: {{room.room_number}}</p>
+    <p>Capacity: {{room.remaining_capacity}}</p>
+  </header>
+  
   <div class="change-buttons-room">
     <form action="/rooms/{{room.id}}/edit" value='edit'>
       <button>Edit</button>

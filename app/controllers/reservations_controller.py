@@ -83,5 +83,6 @@ def check_in(id):
 # Check Out
 @reservations_blueprint.route('/reservations/<id>/departed')
 def check_out(id):
+    guest_repository.stays(id)
     reservation_repository.check_out(id)
     return redirect('/reservations/inhouse')

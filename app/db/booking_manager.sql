@@ -10,7 +10,8 @@ CREATE TABLE guests (
 
 CREATE TABLE rooms (
     id SERIAL PRIMARY KEY,
-    room_number INT
+    room_number INT,
+    remaining_capacity INT
 );
 
 CREATE TABLE reservations (

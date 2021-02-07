@@ -3,8 +3,8 @@ from models.room import Room
 import repositories.room_repository as room_repository
 
 def save(room):
-    sql = "INSERT INTO rooms (room_number) VALUES (%s) RETURNING id"
-    values = [room.room_number]
+    sql = "INSERT INTO rooms (room_number, remaining_capacity) VALUES (%s, %s) RETURNING id"
+    values = [room.room_number, room.remaining_capacity]
     results = run_sql(sql, values)
     id = results[0]['id']
     room.id = id

@@ -6,4 +6,3 @@ class Guest:
 
     def increase_stay_count(self):
         self.stays += 1 
-        return self.stays

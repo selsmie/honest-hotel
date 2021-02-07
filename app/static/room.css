@@ -1,0 +1,54 @@
+#container {
+    display: flex;
+    justify-content: center;
+    color: white;
+ }
+ 
+ #container > header {
+     align-self: center;
+     font-size: 18px;
+     text-align: right;
+ }
+ 
+ .change-buttons-room {
+     display: flex;
+     align-self: center;
+     padding: 0px 10px;
+ } 
+ 
+ .change-buttons-room > form {
+     padding: 0px 5px;
+ } 
+ 
+ .change-buttons-room > form > button {
+     border-radius: 12px;
+     height: 30px;
+     width: 80px;
+     background-color: rgb(52, 252, 159);
+ } 
+ 
+ .change-buttons-room > form > input {
+     border-radius: 12px;
+     height: 30px;
+     width: 80px;
+     background-color: brown;
+ } 
+ 
+ .change-buttons-room > form > button:hover {
+     background-color: rgb(106, 236, 0);
+     cursor: pointer;
+ } 
+ 
+ .change-buttons-room > form > input:hover {
+     background-color: rgb(255, 0, 0);
+     cursor: pointer;
+ } 
+ 
+ .content-new {
+     text-align: center;
+     height: 600px;
+ 
+     border: 3px solid black;
+     color: white;
+     margin: 5px;
+ }

@@ -4,8 +4,8 @@ from models.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
-        self.guest_1 = Guest("Simon Elsmie", 0)
-        self.guest_2 = Guest("Rick Sanchez", 0)
+        self.guest_1 = Guest("Simon Elsmie")
+        self.guest_2 = Guest("Rick Sanchez")
 
     def test_guest_1_name(self):
         self.assertEqual("Simon Elsmie", self.guest_1.name)
