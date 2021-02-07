@@ -36,12 +36,18 @@ body {
 }
 
 #title {
-    display: grid;
     text-align: center;
-    align-content: center;
     height: 100%;
     margin: 5px;
-    padding: 30px;
     color: white;
     border: 3px solid black;
+}
+
+#title > h1 {
+    margin-top: 150px;
+    margin-bottom: 5px;
+}
+
+#title > h2 {
+    margin: 0px;
 }

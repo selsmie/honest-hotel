@@ -70,9 +70,12 @@
     </div>
     {% endif %}
 
-  
-
 </section>
 {% endfor %}
+
+{% if reservations == [] %}
+  <p>No Bookings</p>
+{% endif %}
+
 </main>
 {% endblock  %}

@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<hr>
+<div class="new-item">
+  <a href="/reservations/new"><button>New Reservation</button></a>
+</div>
+<hr>
 <main class='res-content'>
 
 {% for reservation in reservations %}
@@ -24,9 +30,11 @@
   </div>
 </section>
 
-
  
   
 {% endfor %}
+{% if reservations == [] %}
+  <p>No In House Guests</p>
+{% endif %}
 </main>
 {% endblock  %}
