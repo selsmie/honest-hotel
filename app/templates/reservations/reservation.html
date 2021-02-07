@@ -54,7 +54,7 @@
 
     {% if reservation.status == "Departed" %}
     <div class='res-buttons'>
-      <form action="/reservations/{{reservation.id}}/checkin" value='checkin'>
+      <form action="/reservations/{{reservation.id}}/checkin" value='checkin' hidden>
         <button id='check'>Check In</button>
       </form>
     </div>

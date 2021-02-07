@@ -9,7 +9,7 @@ import repositories.room_repository as room_repository
 import repositories.reservation_repository as reservation_repository
 
 guest_1 = Guest("Rick Sanchez", 0)
-guest_1.increase_stay_count()
+# guest_1.increase_stay_count()
 guest_repository.save(guest_1)
 guest_2 = Guest("Morty Smith", 0)
 guest_repository.save(guest_2)
@@ -38,12 +38,5 @@ room_repository.save(room_5)
 
 # reservation_2 = Reservation(guest_4, room_3, 2)
 # reservation_repository.update(reservation_2)
-
-
-
-print(guest_1.name)
-print(guest_1.stays)
-
-
 
 pdb.set_trace()

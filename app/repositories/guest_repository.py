@@ -43,10 +43,14 @@ def update(guest):
     run_sql(sql, values)
 
 def stays(id):
+    # take in reservation id
+    # convert id to full reservation details
     res = reservation_repository.select(id)
+    # take the reservation's guest id and use to generate full guest details
     guest = guest_repository.select(res.guest.id)
+    # use full guest instance with class method to increase stay increase_stay_count
     guest.increase_stay_count()
-    print(guest.stays)
+    # update sql with the guest instance stay count and id as a filter
     sql = "UPDATE guests SET stays = %s WHERE id = %s"
     values = [guest.stays, guest.id]
     run_sql(sql, values)
