@@ -77,12 +77,19 @@ def show_in_house():
 # Check In
 @reservations_blueprint.route('/reservations/<id>/checkin')
 def check_in(id):
-    reservation_repository.check_in(id)
-    return redirect('/reservations')
+    res = reservation_repository.select(id)
+    room = room_repository.select(res.room.id)
+    if room.remaining_capacity > 0:
+        room_repository.capacity_in(id)
+        reservation_repository.check_in(id)
+        return redirect('/reservations')
+    else:
+        return redirect(f'/reservations/{id}/edit')
 
 # Check Out
 @reservations_blueprint.route('/reservations/<id>/departed')
 def check_out(id):
     guest_repository.stays(id)
     reservation_repository.check_out(id)
+    room_repository.capacity_out(id)
     return redirect('/reservations')

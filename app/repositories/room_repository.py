@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.room import Room
 import repositories.room_repository as room_repository
+import repositories.reservation_repository as reservation_repository
 
 def save(room):
     sql = "INSERT INTO rooms (room_number, remaining_capacity) VALUES (%s, %s) RETURNING id"
@@ -41,3 +42,18 @@ def update(room):
     values = [room.room_number, room.id]
     run_sql(sql, values)
     
+def capacity_in(id):
+    res = reservation_repository.select(id)
+    room = room_repository.select(res.room.id)
+    room.capacity_change_in()
+    sql = "UPDATE rooms SET remaining_capacity = %s WHERE id = %s"
+    values = [room.remaining_capacity, room.id]
+    run_sql(sql, values)
+
+def capacity_out(id):
+    res = reservation_repository.select(id)
+    room = room_repository.select(res.room.id)
+    room.capacity_change_out()
+    sql = "UPDATE rooms SET remaining_capacity = %s WHERE id = %s"
+    values = [room.remaining_capacity, room.id]
+    run_sql(sql, values)
