@@ -15,7 +15,7 @@ def save(reservation):
 def select_all():
     reservations = []
 
-    sql = "SELECT * FROM reservations"
+    sql = "SELECT * FROM reservations ORDER BY arrival_date"
     results = run_sql(sql)
 
     for row in results:
@@ -64,7 +64,7 @@ def arrivals():
 def in_house():
     reservations = []
 
-    sql = "SELECT * FROM reservations WHERE status = %s"
+    sql = "SELECT * FROM reservations WHERE status = %s ORDER BY room_id"
     values = ["Checked In"]
     results = run_sql(sql, values)
 
@@ -74,3 +74,23 @@ def in_house():
         reservation = Reservation(guest, room, row['arrival_date'], row['departure_date'], row['status'], row['id'])
         reservations.append(reservation)
     return reservations
+
+def check_in(id):
+    sql = "UPDATE reservations SET status = %s WHERE id = %s"
+    values = ["Checked In", id]
+    run_sql(sql, values)
+
+def check_out(id):
+    guest = guest_repository.select(id)
+    guest.increase_stay_count()
+    stays = guest.stays
+    sql = "UPDATE guests SET stays = %s WHERE id = %s"
+    values = [stays, id]
+    run_sql(sql, values)
+    sql = "UPDATE reservations SET status = %s WHERE id = %s"
+    values = ["Departed", id]
+    run_sql(sql, values)
+    
+    
+
+

@@ -36,6 +36,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(guest):
-    sql = "UPDATE guests SET (name, stays) = (%s, %s) WHERE id = %s"
-    values = [guest.name, guest.stays, guest.id]
+    sql = "UPDATE guests SET name = %s WHERE id = %s"
+    values = [guest.name, guest.id]
+    print(values)
     run_sql(sql, values)

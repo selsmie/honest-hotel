@@ -7,7 +7,7 @@
     <section id='new-res'>
       <div id='arr_date'>
         <label for="arrival_date">Arrival Date</label>
-        <input type="date" name="arrival_date" id="arrival_date" required>
+        <input type="date" name="arrival_date" id="arrival_date" value='{{reservation.id}}' required>
         <p value='{{reservation.id}}'>Current Date: {{reservation.arrival_date}}</p>
       </div>
       <div id='dep-date'>
@@ -19,7 +19,8 @@
         <label for="name">Guest:</label>
         <select name="guest_id" id="name">
           {% for guest in guests %}
-            <option value="{{guest.id}}">{{guest.name}}</option>
+            <option {% if reservation.guest.id==guest.id %}selected{% endif %}
+            value="{{guest.id}}">{{guest.name}}</option>
           {% endfor %}
         </select>
       </div>
@@ -27,16 +28,20 @@
         <label for="room">Room:</label>
         <select name="room_id" id="room">
           {% for room in rooms %}
-            <option value="{{room.id}}">{{room.room_number}}</option>
+            <option {% if reservation.room.id==room.id %}selected{% endif %}
+            value="{{room.id}}">{{room.room_number}}</option>
           {% endfor %}
         </select>
       </div>
       <div id='new-res-status'>
         <label for="status">Status</label>
         <select name="status" id="status">
-          <option value="Incoming">Incoming</option>
-          <option value="Checked In">Checked In</option>
-          <option value="Departed">Departed</option>
+          <option value="Incoming"
+          {% if reservation.status=="Incoming" %}selected{% endif %}>Incoming</option>
+          <option value="Checked In"
+          {% if reservation.status=="Checked In" %}selected{% endif %}>Checked In</option>
+          <option value="Departed"
+          {% if reservation.status=="Departed" %}selected{% endif %}>Departed</option>
         </select>
       </div>
       <div id='new-res-button'>

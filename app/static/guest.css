@@ -10,7 +10,7 @@
 }
 
 .new-item > a > button:hover {
-    background-color: rgb(69, 148, 158);
+    background-color: rgb(52, 228, 252);
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .new-input > input:hover {
-    background-color: rgb(69, 148, 158);
+    background-color: rgb(52, 228, 252);
     cursor: pointer;
 }
 
@@ -92,16 +92,18 @@
     width: 80px;
     margin-top: 0px;
     border-radius: 12px;
+    background-color: rgb(52, 252, 159);
 }
 
 .change-buttons > form > input {
     height: 30px;
     width: 80px;
     border-radius: 12px;
+    background-color: brown;
 }
 
 .change-buttons > form > button:hover {
-    background-color: rgb(69, 148, 158);
+    background-color: rgb(106, 236, 0);
     cursor: pointer;
 }
 
@@ -140,16 +142,18 @@
     border-radius: 12px;
     height: 30px;
     width: 80px;
+    background-color: rgb(52, 252, 159);
 } 
 
 .change-buttons-room > form > input {
     border-radius: 12px;
     height: 30px;
     width: 80px;
+    background-color: brown;
 } 
 
 .change-buttons-room > form > button:hover {
-    background-color: rgb(69, 148, 158);
+    background-color: rgb(106, 236, 0);
     cursor: pointer;
 } 
 

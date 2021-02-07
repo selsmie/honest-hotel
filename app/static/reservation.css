@@ -6,6 +6,7 @@
     border: 3px solid black;
     color: white;
     margin: 5px;
+    align-content: flex-start;
 }
 
 .details {
@@ -13,8 +14,8 @@
     grid-template-columns: 3;
     grid-template-rows: 3;
     grid-template-areas: 
-    "num arr edit"
-    "name dep img"
+    "num arr check"
+    "name dep edit"
     "stay room del";
     margin: 10px 0px;
     width: 100%;
@@ -29,8 +30,8 @@
     grid-template-columns: 3;
     grid-template-rows: 3;
     grid-template-areas: 
-    "img num arr arr"
-    "img name dep edit"
+    "img num arr check"
+    "img name dep dep"
     "img stay room edit";
     margin: 10px 0px;
     width: 100%;
@@ -84,21 +85,41 @@
     grid-area: room;
 }
 
+.res-buttons {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+#check {
+    grid-area: check;
+    border-radius: 12px;
+    width: 60px;
+    height: 50px;
+    background-color: rgb(52, 252, 159);
+}
+
 .res-buttons > form > button {
     grid-area: edit;
     border-radius: 12px;
     width: 60px;
-    padding: 10px 0px;
+    align-content: center;
+    background-color: rgb(222, 238, 129);
 }
 
 .res-buttons > form > input {
     grid-area: del;
     border-radius: 12px;
     width: 60px;
+    background-color: brown;
+}
+
+#check:hover {
+    background-color: rgb(106, 236, 0);
+    cursor: pointer; 
 }
 
 .res-buttons > form > button:hover {
-    background-color: rgb(69, 148, 158);
+    background-color: rgb(233, 250, 0);
     cursor: pointer; 
 }
 

@@ -40,7 +40,8 @@ def edit_guest(id):
 @guests_blueprint.route('/guests/<id>', methods=['POST'])
 def update_guest(id):
     name = request.form['name']
-    updated_guest = Guest(name, id)
+    stays = request.form['stays']
+    updated_guest = Guest(name, stays, id)
     guest_repository.update(updated_guest)
     return redirect('/guests')
 

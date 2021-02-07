@@ -15,16 +15,62 @@
   <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
   <p id='res-dep'>Departure: {{reservation.departure_date}}</p>
   <p id='res-room'>Room: {{reservation.room.room_number}}</p>
-  <div class='res-buttons'>
-    <form action="/reservations/{{reservation.id}}/edit" value='edit'>
-      <button>Edit</button>
-    </form>
-  </div>
-  <div class='res-buttons'>
-    <form action="/reservations/{{reservation.id}}/delete" method="POST">
-      <input type="submit" value="Delete">
-    </form>
-  </div>
+  
+    {% if reservation.status == "Incoming" %}
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/checkin" value='checkin'>
+        <button id='check'>Check In</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/edit" value='edit'>
+        <button id='edit'>Edit</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/delete" method="POST">
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    {% endif %}
+   
+    {% if reservation.status == "Checked In" %}
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/checkin" value='checkin' hidden>
+        <button id='check'>Check In</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/edit" value='edit'>
+        <button id='edit'>Edit</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/delete" method="POST" hidden>
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    {% endif %}
+
+    {% if reservation.status == "Departed" %}
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/checkin" value='checkin'>
+        <button id='check'>Check In</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/edit" value='edit' hidden>
+        <button id='edit'>Edit</button>
+      </form>
+    </div>
+    <div class='res-buttons'>
+      <form action="/reservations/{{reservation.id}}/delete" method="POST" hidden>
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    {% endif %}
+
+  
 
 </section>
 {% endfor %}
