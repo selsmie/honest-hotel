@@ -17,7 +17,7 @@ def reservations():
 @reservations_blueprint.route('/reservations/arrivals')
 def arrivals():
     reservations = reservation_repository.arrivals()
-    return render_template('reservations/reservation.html', reservations=reservations)
+    return render_template('reservations/arrival.html', reservations=reservations)
 
 # NEW
 @reservations_blueprint.route('/reservations/new')
@@ -78,11 +78,11 @@ def show_in_house():
 @reservations_blueprint.route('/reservations/<id>/checkin')
 def check_in(id):
     reservation_repository.check_in(id)
-    return redirect('/reservations/inhouse')
+    return redirect('/reservations')
 
 # Check Out
 @reservations_blueprint.route('/reservations/<id>/departed')
 def check_out(id):
     guest_repository.stays(id)
     reservation_repository.check_out(id)
-    return redirect('/reservations/inhouse')
+    return redirect('/reservations')

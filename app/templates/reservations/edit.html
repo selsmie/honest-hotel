@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<hr>
+<h3>Update Reservation</h3>
+<hr>
+
 <main class='content-new'>
-  <h3>Update Reservation</h3>
+
   <form action="/reservations/{{ reservation.id }}", method='POST'>
     <section id='new-res'>
       <div id='arr_date'>
@@ -37,7 +41,7 @@
         <label for="status">Status</label>
         <select name="status" id="status">
           <option value="Incoming"
-          {% if reservation.status=="Incoming" %}selected{% endif %}>Incoming</option>
+          {% if reservation.status=="Arrival" %}selected{% endif %}>Arrival</option>
           <option value="Checked In"
           {% if reservation.status=="Checked In" %}selected{% endif %}>Checked In</option>
           <option value="Departed"

@@ -47,7 +47,7 @@ def update(reservation):
 def arrivals():
     reservations = []
     sql = "SELECT * FROM reservations WHERE status = %s ORDER BY arrival_date ASC"
-    values = ["Incoming"]
+    values = ["Arrival"]
     results = run_sql(sql, values)
     for row in results:
         guest = guest_repository.select(row['guest_id'])

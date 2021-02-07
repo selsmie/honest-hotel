@@ -2,7 +2,7 @@
 
 {% block content %}
 <hr>
-<h3>All Reservations</h3>
+<h3>Arrivals</h3>
 <div class="new-item">
   <a href="/reservations/new"><button>New Reservation</button></a>
 </div>
@@ -37,8 +37,8 @@
    
     {% if reservation.status == "Checked In" %}
     <div class='res-buttons'>
-      <form action="/reservations/{{reservation.id}}/departed" value='departed'>
-        <button id='check'>Check Out</button>
+      <form action="/reservations/{{reservation.id}}/checkin" value='checkin' hidden>
+        <button id='check'>Check In</button>
       </form>
     </div>
     <div class='res-buttons'>

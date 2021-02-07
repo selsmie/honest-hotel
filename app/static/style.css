@@ -1,6 +1,6 @@
 body {
     background-color:rgb(36, 96, 124);
-    height: 601px;
+    height: 714px;
 }
 
 #logo {
@@ -50,4 +50,9 @@ body {
 
 #title > h2 {
     margin: 0px;
+}
+
+h3 {
+    text-align: center;
+    color: white;
 }

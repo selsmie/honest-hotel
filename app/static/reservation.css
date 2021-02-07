@@ -11,7 +11,7 @@
 
 .details {
     display: grid;
-    grid-template-columns: 3;
+    grid-template-columns: 3fr 3fr 1fr;
     grid-template-rows: 3;
     grid-template-areas: 
     "num arr check"
@@ -27,7 +27,7 @@
 
 .details-inh {
     display: grid;
-    grid-template-columns: 3;
+    grid-template-columns: 1.5fr 2.5fr 2.5fr 1fr;
     grid-template-rows: 3;
     grid-template-areas: 
     "img num arr check"

@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<hr>
+<h3>New Reservation</h3>
+<hr>
+
 <main class='content-new'>
-  <h3>New Reservation</h3>
+ 
   <form action="/reservations", method='POST'>
     <section id='new-res'>
       <div id='arr_date'>
@@ -32,7 +36,7 @@
       <div id='new-res-status'>
         <label for="status">Status</label>
         <select name="status" id="status">
-          <option value="Incoming">Incoming</option>
+          <option value="Arrival">Arrival</option>
           <option value="Checked In">Checked In</option>
         </select>
       </div>
