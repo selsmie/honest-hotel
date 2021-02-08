@@ -69,3 +69,12 @@ def capacity_out(id):
     sql = "UPDATE rooms SET remaining_capacity = %s WHERE id = %s"
     values = [room.remaining_capacity, room.id]
     run_sql(sql, values)
+
+def select_default():
+    room = None
+    sql = "SELECT * FROM rooms WHERE id = 1"
+    result = run_sql(sql)[0]
+    if result is not None:
+        room = Room(result['room_number'], result['remaining_capacity'], result['id'])
+    return room
+    

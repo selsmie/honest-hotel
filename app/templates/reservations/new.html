@@ -27,19 +27,13 @@
         </select>
       </div>
       <div id='new-res-room'>
-        <label for="room">Room:</label>
-        <select name="room_id" id="room">
-          <option value=""></option>
-          {% for room in rooms %}
-            <option value="{{room.id}}">{{room.room_number}}</option>
-          {% endfor %}
+        <select name="room_id" id="room" hidden>
+          <option value="{{room.id}}">{{room.room_number}}</option>
         </select>
       </div>
       <div id='new-res-status'>
-        <label for="status">Status</label>
-        <select name="status" id="status">
+        <select name="status" id="status" hidden>
           <option value="Arrival">Arrival</option>
-          <option value="Checked In">Checked In</option>
         </select>
       </div>
       <div id='new-res-button'>

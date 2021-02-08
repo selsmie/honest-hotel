@@ -78,3 +78,8 @@ def check_out(id):
     sql = "UPDATE reservations SET status = %s WHERE id = %s"
     values = ["Departed", id]
     run_sql(sql, values)
+
+def update_room(room, id):
+    sql = "UPDATE reservations SET room_id = %s WHERE id = %s"
+    values = [room.id, id]
+    run_sql(sql, values)

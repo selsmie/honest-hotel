@@ -24,8 +24,8 @@ def arrivals():
 @reservations_blueprint.route('/reservations/new')
 def new_reservation():
     guests = guest_repository.select_all()
-    rooms = room_repository.select_available()
-    return render_template('reservations/new.html', guests=guests, rooms=rooms)
+    room = room_repository.select_default()
+    return render_template('reservations/new.html', guests=guests, room=room)
 
 # CREATE
 @reservations_blueprint.route('/reservations', methods=['POST'])
@@ -33,7 +33,7 @@ def create_reservation():
     guest_id = request.form['guest_id']
     guest = guest_repository.select(guest_id)
     room_id = request.form['room_id']
-    room = room_repository.select(room_id)
+    room = room_repository.select_default()
     arrival_date = request.form['arrival_date']
     departure_date = request.form['departure_date']
     status = request.form['status']
@@ -85,6 +85,9 @@ def check_in(id):
 
 @reservations_blueprint.route('/reservations/<id>/checkin', methods=['POST'])
 def confirm(id):
+    room_id = request.form['room_id']
+    assigned_room = room_repository.select(room_id) 
+    reservation_repository.update_room(assigned_room, id)
     res = reservation_repository.select(id)
     room = room_repository.select(res.room.id)
     room_repository.capacity_in(id)

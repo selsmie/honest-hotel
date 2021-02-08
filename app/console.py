@@ -19,6 +19,9 @@ guest_repository.save(guest_4)
 guest_5 = Guest("Jerry Smith")
 guest_repository.save(guest_5)
 
+room_0 = Room(0, 0)
+room_repository.save(room_0)
+
 room_1 = Room(1)
 room_repository.save(room_1)
 room_2 = Room(2)
@@ -29,5 +32,7 @@ room_4 = Room(4)
 room_repository.save(room_4)
 room_5 = Room(5)
 room_repository.save(room_5)
+
+
 
 pdb.set_trace()
