@@ -32,7 +32,6 @@ def new_reservation():
 def create_reservation():
     guest_id = request.form['guest_id']
     guest = guest_repository.select(guest_id)
-    room_id = request.form['room_id']
     room = room_repository.select_default()
     arrival_date = request.form['arrival_date']
     departure_date = request.form['departure_date']
@@ -88,8 +87,6 @@ def confirm(id):
     room_id = request.form['room_id']
     assigned_room = room_repository.select(room_id) 
     reservation_repository.update_room(assigned_room, id)
-    res = reservation_repository.select(id)
-    room = room_repository.select(res.room.id)
     room_repository.capacity_in(id)
     reservation_repository.check_in(id)
     return redirect('/reservations')
