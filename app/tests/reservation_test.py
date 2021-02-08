@@ -6,8 +6,8 @@ from models.room import Room
 
 class TestReservation(unittest.TestCase):
     def setUp(self):
-        self.guest_1 = Guest("Simon Elsmie")
-        self.guest_2 = Guest("Rick Sanchez")
+        self.guest_1 = Guest("Simon Elsmie", 0)
+        self.guest_2 = Guest("Rick Sanchez", 0)
         self.room_1 = Room(1)
         self.room_2 = Room(2)
         self.reservation_1 = Reservation(self.guest_1, self.room_2)

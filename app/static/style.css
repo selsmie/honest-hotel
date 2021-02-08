@@ -1,6 +1,6 @@
 body {
     background-color:rgb(36, 96, 124);
-    height: 612px;
+    height: 588px;
     max-width: auto;
 }
 
@@ -56,4 +56,5 @@ body {
 h3 {
     text-align: center;
     color: white;
+    margin: 5px 0px;
 }
