@@ -1,6 +1,7 @@
 body {
     background-color:rgb(36, 96, 124);
-    height: 714px;
+    height: 612px;
+    max-width: auto;
 }
 
 #logo {

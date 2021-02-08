@@ -24,7 +24,7 @@
      border-radius: 12px;
      height: 30px;
      width: 80px;
-     background-color: rgb(52, 252, 159);
+     background-color: rgba(75, 252, 52, 0.733);
  } 
  
  .change-buttons-room > form > input {
@@ -35,12 +35,14 @@
  } 
  
  .change-buttons-room > form > button:hover {
-     background-color: rgb(106, 236, 0);
+    background-color: rgb(51, 255, 0);
+    font-weight: bolder;
      cursor: pointer;
  } 
  
  .change-buttons-room > form > input:hover {
      background-color: rgb(255, 0, 0);
+     font-weight: bold;
      cursor: pointer;
  } 
  

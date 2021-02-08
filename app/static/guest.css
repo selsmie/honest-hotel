@@ -38,7 +38,7 @@
 .content {
     display: grid;
     overflow: scroll;
-    height: 600px;
+    height: 500px;
     justify-content: center;
     border: 3px solid black;
     color: white;
@@ -92,7 +92,7 @@
     width: 80px;
     margin-top: 0px;
     border-radius: 12px;
-    background-color: rgb(52, 252, 159);
+    background-color: rgba(75, 252, 52, 0.733);
 }
 
 .change-buttons > form > input {
@@ -103,12 +103,14 @@
 }
 
 .change-buttons > form > button:hover {
-    background-color: rgb(106, 236, 0);
+    background-color: rgb(51, 255, 0);
+    font-weight: bolder;
     cursor: pointer;
 }
 
 .change-buttons > form > input:hover {
     background-color: rgb(255, 0, 0);
+    font-weight: bold;
     cursor: pointer;
 }
 
