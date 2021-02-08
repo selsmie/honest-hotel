@@ -154,3 +154,39 @@
     height: 30px;
     width: auto;
 }
+
+#checkin {
+    /* display: grid; */
+    justify-content: center;
+    width: 300px;
+    border: 1px black solid;
+    margin: 10px;
+    text-align: center;
+}
+
+#checkin > div > p {
+    margin: 7px;
+}
+
+#new-check-button {
+    justify-self: center;
+
+}
+
+#new-check-button > input {
+    border-radius: 12px;
+    width: 90px;
+    height: 40px;
+    margin: 5px;
+    background-color: rgba(75, 252, 52, 0.733);
+}
+
+#new-check-button > input:hover {
+    background-color: rgb(51, 255, 0);
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+#new-res-room {
+    margin: 10px;
+}

@@ -11,7 +11,7 @@
 <main class='res-content'>
 
   <form action="/reservations/{{ reservation.id }}/checkin", method='POST'>
-    <section id='new-res'>
+    <section id='checkin'>
       <div id='arr_date'>
         <p value='{{reservation.id}}'>Current Date: {{reservation.arrival_date}}</p>
       </div>
@@ -24,9 +24,14 @@
       </div>
       <div id='new-res-room'>
         <label for="room">Room:</label>
-        <span value="{{room.id}}">{{room.room_number}}</span>
+        <span><select name="room_id" id="room">
+          {% for room in rooms %}
+            <option value="{{room.id}}">{{room.room_number}}</option>
+          {% endfor %}
+        </select>
+        </span>
       </div>
-      <div id='new-res-button'>
+      <div id='new-check-button'>
         <input type="submit" value='Check In'>
       </div>
     </section>

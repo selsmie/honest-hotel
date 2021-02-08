@@ -80,8 +80,8 @@ def show_in_house():
 def check_in(id):
     reservation = reservation_repository.select(id)
     guest = guest_repository.select(reservation.guest.id)
-    room = room_repository.select(reservation.room.id)
-    return render_template('reservations/checkin.html', reservation=reservation, guest= guest, room=room)
+    rooms = room_repository.select_available()
+    return render_template('reservations/checkin.html', reservation=reservation, guest= guest, rooms=rooms)
 
 @reservations_blueprint.route('/reservations/<id>/checkin', methods=['POST'])
 def confirm(id):
