@@ -1,17 +1,24 @@
 #container {
-    display: flex;
+    display: grid;
     justify-content: center;
     color: white;
     border: 1px solid black;
-    padding: 5px 0px 5px 15px;
+    padding: 5px;
     margin: 10px;
  }
  
  #container > header {
+   display: flex;
+   flex-direction: column;
     align-self: center;
     font-size: 18px;
-    text-align: right;
+    text-align: center;
  }
+
+ #container > header >p {
+   margin: 0px;
+   padding: 5px;
+}
  
  .change-buttons-room {
     display: flex;
@@ -35,6 +42,7 @@
     height: 30px;
     width: 80px;
     background-color: brown;
+
  } 
  
  .change-buttons-room > form > button:hover {
@@ -73,7 +81,7 @@
     width: max-content;
     padding: 5px;
     margin: 10px;
-     
+   
  }
 
 #new-room > input {

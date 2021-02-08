@@ -1,17 +1,27 @@
 body {
     background-color:rgb(36, 96, 124);
-    height: 588px;
+    height: 575px;
     max-width: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
 }
 
 #logo {
-    display: grid;
-}
-
-#logo > img {
-    height: 100px;
-    justify-self: center;
-    padding: 10px;
+    color: white;
+    background-color: brown;
+    width: max-content;
+    font-size: 30px;
+    font-style: italic;
+    text-decoration: underline;
+    padding: 20px;
+    padding-bottom: 15px;
+    margin: 5px;
+    border-radius: 12px;
+    border: 2px solid white;
 }
 
 .quick-links {

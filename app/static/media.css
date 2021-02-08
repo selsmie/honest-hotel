@@ -5,7 +5,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 300px;
-        height: 230px;
+        height: 250px;
     }
 
     .details-inh {
@@ -36,8 +36,12 @@
         "img stay button";
         margin: 10px 0px;
         width: 100%;
-        padding: 0px;
+        padding: 5px;
         border: 1px black solid;
+    }
+
+    .names > img {
+        height: 90px;
     }
 
     #check {
