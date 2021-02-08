@@ -1,5 +1,5 @@
 class Guest:
-    def __init__(self, name, stays, id=None):
+    def __init__(self, name, stays=0, id=None):
         self.name = name
         self.id = id
         self.stays = stays

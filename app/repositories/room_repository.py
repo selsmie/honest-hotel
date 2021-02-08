@@ -3,6 +3,8 @@ from models.room import Room
 import repositories.room_repository as room_repository
 import repositories.reservation_repository as reservation_repository
 
+import pdb
+
 def save(room):
     sql = "INSERT INTO rooms (room_number, remaining_capacity) VALUES (%s, %s) RETURNING id"
     values = [room.room_number, room.remaining_capacity]
@@ -15,7 +17,7 @@ def select_all():
     sql = "SELECT * FROM rooms"
     results = run_sql(sql)
     for result in results:
-        room = Room(result['room_number'], result['id'])
+        room = Room(result['room_number'], result['remaining_capacity'], result['id'])
         rooms.append(room)
     return rooms
 
@@ -24,7 +26,7 @@ def select_available():
     sql = "SELECT * FROM rooms WHERE remaining_capacity > 0"
     results = run_sql(sql)
     for result in results:
-        room = Room(result['room_number'], result['id'])
+        room = Room(result['room_number'], result['remaining_capacity'], result['id'])
         rooms.append(room)
     return rooms
 
@@ -35,7 +37,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        room = Room(result['room_number'], result['id'])
+        room = Room(result['room_number'], result['remaining_capacity'], result['id'])
     return room
 
 def delete_all():
@@ -63,9 +65,7 @@ def capacity_in(id):
 def capacity_out(id):
     res = reservation_repository.select(id)
     room = room_repository.select(res.room.id)
-    print(room.remaining_capacity)
     room.capacity_change_out()
-    print(room.remaining_capacity)
     sql = "UPDATE rooms SET remaining_capacity = %s WHERE id = %s"
     values = [room.remaining_capacity, room.id]
     run_sql(sql, values)

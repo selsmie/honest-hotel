@@ -35,7 +35,8 @@ def edit_room(id):
 @rooms_blueprint.route('/rooms/<id>', methods=['POST'])
 def update_room(id):
     number = request.form['number']
-    updated_room = Room(number, id)
+    cap = room_repository.select(id)
+    updated_room = Room(number, cap.remaining_capacity, id)
     room_repository.update(updated_room)
     return redirect('/rooms')
 
