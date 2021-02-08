@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<hr>
+<h3>Check In</h3>
+<div class="new-item">
+  <a href="/reservations/new"><button>New Reservation</button></a>
+</div>
+<hr>
+<main class='res-content'>
+
+  <form action="/reservations/{{ reservation.id }}/checkin", method='POST'>
+    <section id='new-res'>
+      <div id='arr_date'>
+        <p value='{{reservation.id}}'>Current Date: {{reservation.arrival_date}}</p>
+      </div>
+      <div id='dep-date'>   
+        <p value='{{reservation.id}}'>Current Date: {{reservation.departure_date}}</p>
+      </div>
+      <div id='new-res-name'>
+        <label for="name">Guest:</label>
+        <span value="{{guest.id}}">{{guest.name}}</span>
+      </div>
+      <div id='new-res-room'>
+        <label for="room">Room:</label>
+        <span value="{{room.id}}">{{room.room_number}}</span>
+      </div>
+      <div id='new-res-button'>
+        <input type="submit" value='Check In'>
+      </div>
+    </section>
+  </form>
+
+{% if reservations == [] %}
+  <p>No In House Guests</p>
+{% endif %}
+</main>
+{% endblock  %}

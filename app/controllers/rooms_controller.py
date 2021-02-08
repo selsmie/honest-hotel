@@ -25,12 +25,6 @@ def create_room():
     room_repository.save(new_room)
     return redirect('/rooms')
 
-# SHOW
-@rooms_blueprint.route('/rooms/<id>')
-def show_room(id):
-    room = room_repository.select(id)
-    return render_template('rooms/show.html', room=room)
-
 # EDIT
 @rooms_blueprint.route('/rooms/<id>/edit')
 def edit_room(id):

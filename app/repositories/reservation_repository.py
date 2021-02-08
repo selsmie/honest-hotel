@@ -14,7 +14,7 @@ def save(reservation):
 
 def select_all():
     reservations = []
-    sql = "SELECT * FROM reservations ORDER BY arrival_date"
+    sql = "SELECT * FROM reservations ORDER BY status ASC"
     results = run_sql(sql)
     for row in results:
         guest = guest_repository.select(row['guest_id'])

@@ -19,6 +19,16 @@ def select_all():
         rooms.append(room)
     return rooms
 
+def select_available():
+    rooms = []
+    sql = "SELECT * FROM rooms WHERE remaining_capacity > 0"
+    results = run_sql(sql)
+    for result in results:
+        room = Room(result['room_number'], result['id'])
+        rooms.append(room)
+    return rooms
+
+
 def select(id):
     room = None
     sql = "SELECT * FROM rooms WHERE id = %s"
@@ -53,7 +63,9 @@ def capacity_in(id):
 def capacity_out(id):
     res = reservation_repository.select(id)
     room = room_repository.select(res.room.id)
+    print(room.remaining_capacity)
     room.capacity_change_out()
+    print(room.remaining_capacity)
     sql = "UPDATE rooms SET remaining_capacity = %s WHERE id = %s"
     values = [room.remaining_capacity, room.id]
     run_sql(sql, values)

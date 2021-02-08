@@ -8,12 +8,13 @@ import repositories.guest_repository as guest_repository
 
 reservations_blueprint = Blueprint("reservations", __name__)
 
-# INDEX
+# All reservations
 @reservations_blueprint.route('/reservations')
 def reservations():
     reservations = reservation_repository.select_all()
     return render_template('reservations/reservation.html', reservations=reservations)
 
+# Arrivals
 @reservations_blueprint.route('/reservations/arrivals')
 def arrivals():
     reservations = reservation_repository.arrivals()
@@ -23,7 +24,7 @@ def arrivals():
 @reservations_blueprint.route('/reservations/new')
 def new_reservation():
     guests = guest_repository.select_all()
-    rooms = room_repository.select_all()
+    rooms = room_repository.select_available()
     return render_template('reservations/new.html', guests=guests, rooms=rooms)
 
 # CREATE
@@ -77,14 +78,18 @@ def show_in_house():
 # Check In
 @reservations_blueprint.route('/reservations/<id>/checkin')
 def check_in(id):
+    reservation = reservation_repository.select(id)
+    guest = guest_repository.select(reservation.guest.id)
+    room = room_repository.select(reservation.room.id)
+    return render_template('reservations/checkin.html', reservation=reservation, guest= guest, room=room)
+
+@reservations_blueprint.route('/reservations/<id>/checkin', methods=['POST'])
+def confirm(id):
     res = reservation_repository.select(id)
     room = room_repository.select(res.room.id)
-    if room.remaining_capacity > 0:
-        room_repository.capacity_in(id)
-        reservation_repository.check_in(id)
-        return redirect('/reservations')
-    else:
-        return redirect(f'/reservations/{id}/edit')
+    room_repository.capacity_in(id)
+    reservation_repository.check_in(id)
+    return redirect('/reservations')
 
 # Check Out
 @reservations_blueprint.route('/reservations/<id>/departed')
