@@ -13,7 +13,7 @@
 {% for reservation in reservations %}
 <section class='details-inh'>
   <p id='res-number'>Res #: {{reservation.id}} - <span>{{reservation.status}}</span></p>
-  <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+  
   <p id='res-name'>Name: {{reservation.guest.name}}</p>
   <p id='res-stay'>Stays: {{reservation.guest.stays}}</p>
   <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
@@ -29,6 +29,7 @@
       <button id='edit' >Edit</button>
     </form>
   </div>
+  <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
 </section>
 
  
