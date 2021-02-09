@@ -15,7 +15,7 @@
   <p id='res-stay'>Stays: {{reservation.guest.stays}}</p>
   <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
   <p id='res-dep'>Departure: {{reservation.departure_date}}</p>
-  <p id='res-room'>Room: {{reservation.room.room_number}}</p>
+  <p id='res-room'>Room #: {{reservation.room.room_number}}</p>
   
     {% if reservation.status == "Arrival" %}
     <div class='res-buttons'>

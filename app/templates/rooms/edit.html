@@ -10,7 +10,7 @@
   <form action="/rooms/{{ room.id }}", method='POST'>
     <div id='new-name'>
       <div>
-        <label for="number">Room Number:</label>
+        <label for="number">Room #:</label>
         <input type="number" name="number" id="number" value="{{ room.room_number }}" placeholder="Room Number" required autofocus unique>
       </div>
       <div class='new-input'>

@@ -18,7 +18,7 @@
   <p id='res-stay'>Stays: {{reservation.guest.stays}}</p>
   <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
   <p id='res-dep'>Departure: {{reservation.departure_date}}</p>
-  <p id='res-room'>Room: {{reservation.room.room_number}}</p>
+  <p id='res-room'>Room #: {{reservation.room.room_number}}</p>
   <div class='res-buttons'>
     <form action="/reservations/{{reservation.id}}/departed" value='departed'>
       <button id='check'>Check Out</button>
