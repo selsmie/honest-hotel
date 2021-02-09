@@ -53,7 +53,33 @@
     margin: 0px;
 }
 
+.details > a {
+    text-decoration: none;
+    color: white;
+}
+
+
 .details > p {
+    padding: 5px 0px;
+    margin: 5px;
+}
+
+.details > a > p {
+    padding: 5px 0px;
+    margin: 5px;
+}
+
+.details-inh > a {
+    text-decoration: none;
+    color: white;
+}
+
+.details-inh > p {
+    padding: 5px 0px;
+    margin: 5px;
+}
+
+.details-inh > a > p {
     padding: 5px 0px;
     margin: 5px;
 }
@@ -65,6 +91,7 @@
 #res-name {
     grid-area: name;
 }
+
 
 #res-stay {
     grid-area: stay;

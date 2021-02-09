@@ -14,7 +14,7 @@
 <section class='details-inh'>
   <p id='res-number'>Res #: {{reservation.id}} - <span>{{reservation.status}}</span></p>
   
-  <p id='res-name'>Name: {{reservation.guest.name}}</p>
+  <a href="/guests/{{reservation.guest.id}}/preferences"><p id='res-name'>Name: {{reservation.guest.name}}  <i class="fa fa-arrow-circle-right fa-1x" aria-hidden="true"></i></p></a>
   <p id='res-stay'>Stays: {{reservation.guest.stays}}</p>
   <p id='res-arr'>Arrival: {{reservation.arrival_date}}</p>
   <p id='res-dep'>Departure: {{reservation.departure_date}}</p>

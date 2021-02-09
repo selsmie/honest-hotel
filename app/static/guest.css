@@ -60,7 +60,16 @@
     height: max-content;
 }
 
-.names > h4 {
+.names > a {
+    text-decoration: none;
+    color: white;
+}
+
+.names > a:hover {
+    color: greenyellow;
+}
+
+.names > a > h4 {
     margin-bottom: 0;
     grid-area: name;
 }
@@ -140,7 +149,7 @@
     margin: 20px;
     padding: 5px;
     max-height: 300px;
-    width: 400px;
+    max-width: 400px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 2;
