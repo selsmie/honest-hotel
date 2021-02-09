@@ -83,3 +83,21 @@ def update_room(room, id):
     sql = "UPDATE reservations SET room_id = %s WHERE id = %s"
     values = [room.id, id]
     run_sql(sql, values)
+
+def total_arrivals():
+    arrivals = 0
+    sql = "SELECT * FROM reservations WHERE arrival_date = %s AND status = %s"
+    values = ['2021-02-06', "Arrival"]
+    results = run_sql(sql, values)
+    for row in results:
+        arrivals += 1
+    return arrivals
+
+def total_departures():
+    departures = 0
+    sql = "SELECT * FROM reservations WHERE departure_date = %s AND status = %s"
+    values = ['2021-02-06', "Checked In"]
+    results = run_sql(sql, values)
+    for row in results:
+        departures += 1
+    return departures

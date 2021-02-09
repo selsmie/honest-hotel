@@ -104,3 +104,6 @@ def check_out(id):
     reservation_repository.check_out(id)
     room_repository.capacity_out(id)
     return redirect('/reservations')
+
+
+    

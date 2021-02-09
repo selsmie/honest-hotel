@@ -55,12 +55,16 @@ header {
     padding: 5px;
 }
 
-#title > h1 {
+#header {
+    display: grid;
+}
+
+#header > h1 {
     margin-top: 150px;
     margin-bottom: 5px;
 }
 
-#title > h2 {
+#header > h2 {
     margin: 0px;
 }
 
