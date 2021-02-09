@@ -113,14 +113,12 @@ def total_inh_rooms():
 
 def current_occupancy():
     total_rooms = len(room_repository.select_all()) - 1
-    print(total_rooms)
     inh = total_inh_rooms()
     current_occupancy = (inh/ total_rooms) * 100
     return round(current_occupancy, 1)
 
 def expected_occupancy():
     total_rooms = len(room_repository.select_all()) - 1
-    print(total_rooms)
     inh = total_inh_rooms()
     expected_occupancy = ((inh - total_departures() + total_arrivals()) / total_rooms) * 100
     return round(expected_occupancy, 1)

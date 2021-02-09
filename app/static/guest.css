@@ -134,3 +134,66 @@
 .content > h3 {
     text-align: center;
 }
+
+.preferences {
+    border: 1px black solid;
+    margin: 20px;
+    padding: 5px;
+    max-height: 300px;
+    width: 400px;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-areas: 
+    "name edit"
+    "stays edit"
+    "preferences preferences";
+}
+
+#pref-name {
+    max-width: 380px;
+    margin: 5px;
+    grid-area: name;
+}
+
+#pref-stays {
+    max-width: 350px;
+    margin: 5px;
+    grid-area: stays;
+}
+
+#pref {
+    max-width: 380px;
+    overflow-wrap: break-word;
+    grid-area: preferences;
+}
+
+#pref > h4 {
+    margin: 5px;
+}
+
+#pref > p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.preferences > form {
+    justify-self: flex-end;
+}
+
+.preferences > form > button {
+    height: 30px;
+    width: 80px;
+    margin-top: 0px;
+    border-radius: 12px;
+    background-color: rgb(222, 238, 129);
+    grid-area: edit;
+}
+
+.preferences > form > button:hover {
+    background-color: rgb(233, 250, 0);
+    font-weight: bolder;
+    cursor: pointer;
+}
+

@@ -35,7 +35,8 @@ def edit_guest(id):
 def update_guest(id):
     name = request.form['name']
     stays = request.form['stays']
-    updated_guest = Guest(name, stays, id)
+    preferences = request.form['preferences']
+    updated_guest = Guest(name, stays, preferences, id)
     guest_repository.update(updated_guest)
     return redirect('/guests')
 
@@ -49,3 +50,9 @@ def delete_guest(id):
 def delete_confirm(id):
     guest_repository.delete(id)
     return redirect('/guests')
+
+# Preferences
+@guests_blueprint.route('/guests/<id>/preferences')
+def guest_preferences(id):
+    guest = guest_repository.select(id)
+    return render_template('guests/preference.html', guest=guest)

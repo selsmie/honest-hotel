@@ -15,7 +15,7 @@ def select_all():
     sql = "SELECT * FROM guests"
     results = run_sql(sql)
     for row in results:
-        guest = Guest(row['name'], row['stays'], row['id'])
+        guest = Guest(row['name'], row['stays'], row['preferences'], row['id'])
         guests.append(guest)
     return guests
 
@@ -25,7 +25,7 @@ def select(id):
     values =[id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        guest = Guest(result['name'], result['stays'], result['id'])
+        guest = Guest(result['name'], result['stays'], result['preferences'], result['id'])
     return guest
 
 def delete_all():
@@ -38,9 +38,10 @@ def delete(id):
     run_sql(sql, values)
 
 def update(guest):
-    sql = "UPDATE guests SET name = %s WHERE id = %s"
-    values = [guest.name, guest.id]
+    sql = "UPDATE guests SET (name, preferences) = (%s, %s) WHERE id = %s"
+    values = [guest.name, guest.preferences, guest.id]
     run_sql(sql, values)
+    print(guest.preferences)
 
 def stays(id):
     # take in reservation id

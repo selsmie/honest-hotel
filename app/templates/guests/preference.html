@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+<hr>
+<h3>Guest Profiles</h3>
+<div class='new-item'>
+  <a href="/guests/new"><button>New Guest</button></a>
+</div>
+<hr>
+<main class='content'>
+  <section class='preferences'>
+    <h4 id='pref-name'>{{guest.name}}</h4>
+    <h4 id='pref-stays'>Stays: {{guest.stays}}</h4>
+    <div id='pref'>
+      <h4 >Preferences: </h4>
+    <p>{{guest.preferences}}</p>
+    </div>
+    
+    <form action="/guests/{{guest.id}}/edit" value='edit'>
+      <button>Edit</button>
+    </form>
+  </section>
+    
+
+{% endblock  %}

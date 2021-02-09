@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS guests;
 CREATE TABLE guests (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    stays INT
+    stays INT,
+    preferences TEXT
 );
 
 CREATE TABLE rooms (
