@@ -33,6 +33,18 @@ room_repository.save(room_4)
 room_5 = Room(5)
 room_repository.save(room_5)
 
+arr_date = '2021-02-06'
+dep_date = '2021-02-07'
 
+res_1 = Reservation(guest_1, room_0, arr_date, dep_date, "Arrival")
+reservation_repository.save(res_1)
+res_2 = Reservation(guest_2, room_0, arr_date, dep_date, "Arrival")
+reservation_repository.save(res_2)
+res_3 = Reservation(guest_3, room_0, arr_date, dep_date, "Arrival")
+reservation_repository.save(res_3)
+res_4 = Reservation(guest_4, room_0, arr_date, dep_date, "Arrival")
+reservation_repository.save(res_4)
+res_5 = Reservation(guest_5, room_0, arr_date, dep_date, "Arrival")
+reservation_repository.save(res_5)
 
 pdb.set_trace()
