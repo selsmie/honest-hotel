@@ -17,7 +17,9 @@ app.register_blueprint(reservations_blueprint)
 def main():
     arrivals = reservation_repository.total_arrivals()
     departures = reservation_repository.total_departures()
-    return render_template('index.html', arrivals=arrivals, departures=departures)
+    expected_occupancy = reservation_repository.expected_occupancy()
+    current_occupancy = reservation_repository.current_occupancy()
+    return render_template('index.html', arrivals=arrivals, departures=departures, expected_occupancy=expected_occupancy, current_occupancy=current_occupancy)
 
 if __name__ == '__main__':
     app.run()

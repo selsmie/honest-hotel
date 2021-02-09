@@ -73,3 +73,28 @@ h3 {
     color: white;
     margin: 5px 0px;
 }
+
+#stats {
+    border: 2px black solid;
+    width: 200px;
+    padding: 5px;
+    align-items: baseline;
+    height: max-content;
+    margin: 100px auto;
+    text-align: center;
+}
+
+#stats > p > a {
+    text-decoration: none;
+    color: white;
+}
+
+#stats > p > a:hover {
+    color: greenyellow;
+    font-weight: bold;
+}
+
+#stats > p > a > i {
+    padding-left: 10px;
+}
+

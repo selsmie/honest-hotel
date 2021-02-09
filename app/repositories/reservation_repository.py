@@ -101,3 +101,26 @@ def total_departures():
     for row in results:
         departures += 1
     return departures
+
+def total_inh_rooms():
+    rooms = 0
+    sql = "SELECT * FROM reservations WHERE status = %s"
+    values = ["Checked In"]
+    results = run_sql(sql, values)
+    for row in results:
+        rooms += 1
+    return rooms
+
+def current_occupancy():
+    total_rooms = len(room_repository.select_all()) - 1
+    print(total_rooms)
+    inh = total_inh_rooms()
+    current_occupancy = (inh/ total_rooms) * 100
+    return round(current_occupancy, 1)
+
+def expected_occupancy():
+    total_rooms = len(room_repository.select_all()) - 1
+    print(total_rooms)
+    inh = total_inh_rooms()
+    expected_occupancy = ((inh - total_departures() + total_arrivals()) / total_rooms) * 100
+    return round(expected_occupancy, 1)
