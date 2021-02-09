@@ -41,7 +41,12 @@ def update_room(id):
     return redirect('/rooms')
 
 # DELETE
-@rooms_blueprint.route('/rooms/<id>/delete', methods=['POST'])
+@rooms_blueprint.route('/rooms/<id>/delete')
 def delete_room(id):
+    room = room_repository.select(id)
+    return render_template('rooms/delete.html', room=room)
+
+@rooms_blueprint.route('/rooms/<id>/delete', methods=['POST'])
+def delete_confirm(id):
     room_repository.delete(id)
     return redirect('/rooms')

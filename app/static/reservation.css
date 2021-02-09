@@ -156,12 +156,12 @@
 }
 
 #checkin {
-    /* display: grid; */
     justify-content: center;
     width: 300px;
     border: 1px black solid;
     margin: 10px;
     text-align: center;
+    padding: 5px;
 }
 
 #checkin > div > p {
@@ -189,4 +189,18 @@
 
 #new-res-room {
     margin: 10px;
+}
+
+#delete > input {
+    border-radius: 12px;
+    width: 60px;
+    height: 40px;
+    background-color: brown;
+    margin: 5px;
+}
+
+#delete > input:hover {
+    background-color: rgb(255, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
 }

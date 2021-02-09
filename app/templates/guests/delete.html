@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<hr>
+<h3>Delete Confirmation</h3>
+<div class="new-item">
+  <a href="/guests/new"><button>New Guest</button></a>
+</div>
+<hr>
+<main class='res-content'>
+
+  <form action="/guests/{{ guest.id }}/delete", method='POST'>
+    <section id='checkin'>
+      <div>
+        <label for="name">Guest:</label>
+        <span value="{{guest.id}}">{{guest.name}}</span>
+      </div>
+      <div id='delete'>
+        <input type="submit" value='Delete'>
+      </div>
+    </section>
+  </form>
+
+{% if reservations == [] %}
+  <p>No In House Guests</p>
+{% endif %}
+</main>
+{% endblock  %}

@@ -63,8 +63,14 @@ def update_reservation(id):
     return redirect('/reservations')
 
 # DELETE
-@reservations_blueprint.route('/reservations/<id>/delete', methods=['POST'])
+@reservations_blueprint.route('/reservations/<id>/delete')
 def delete_reservation(id):
+    reservation = reservation_repository.select(id)
+    guest = guest_repository.select(reservation.guest.id)
+    return render_template('reservations/delete.html', reservation=reservation, guest= guest)
+
+@reservations_blueprint.route('/reservations/<id>/delete', methods=['POST'])
+def delete_confirm(id):
     reservation_repository.delete(id)
     return redirect('/reservations')
 

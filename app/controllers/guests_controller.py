@@ -40,7 +40,12 @@ def update_guest(id):
     return redirect('/guests')
 
 # DELETE
-@guests_blueprint.route('/guests/<id>/delete', methods=['POST'])
+@guests_blueprint.route('/guests/<id>/delete')
 def delete_guest(id):
+    guest = guest_repository.select(id)
+    return render_template('guests/delete.html', guest=guest)
+
+@guests_blueprint.route('/guests/<id>/delete', methods=['POST'])
+def delete_confirm(id):
     guest_repository.delete(id)
     return redirect('/guests')
