@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-09T16:32:39.666Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="zGswYdq4jT-IPsK4PqY7" version="14.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-09T16:33:05.618Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="UKC0UOrJN9EGszhJC7RL" version="14.3.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="965" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -100,8 +100,14 @@
         <mxCell id="VwRy0QbdDJfsCYny8_m9-21" value="Update database to show reservation is now departed" style="whiteSpace=wrap;html=1;rounded=1;shadow=0;strokeWidth=1;glass=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="360" y="930" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="VwRy0QbdDJfsCYny8_m9-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VwRy0QbdDJfsCYny8_m9-23" target="VwRy0QbdDJfsCYny8_m9-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="VwRy0QbdDJfsCYny8_m9-23" value="Increase remaining capacity of the room" style="whiteSpace=wrap;html=1;rounded=1;shadow=0;strokeWidth=1;glass=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="160" y="930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VwRy0QbdDJfsCYny8_m9-25" value="Room back into availability for next guest" style="whiteSpace=wrap;html=1;rounded=1;shadow=0;strokeWidth=1;glass=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="1020" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
