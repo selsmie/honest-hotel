@@ -69,6 +69,11 @@
     margin: 5px;
 }
 
+.details > a:hover {
+    color: greenyellow;
+    cursor: pointer;
+}
+
 .details-inh > a {
     text-decoration: none;
     color: white;
@@ -83,6 +88,12 @@
     padding: 5px 0px;
     margin: 5px;
 }
+
+.details-inh > a:hover {
+    color: greenyellow;
+    cursor: pointer;
+}
+
 
 #res-number {
     grid-area: num;
