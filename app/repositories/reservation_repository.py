@@ -45,7 +45,7 @@ def update(reservation):
     values = [reservation.guest.id, reservation.room.id, reservation.arrival_date, reservation.departure_date, reservation.status, reservation.id]
     run_sql(sql, values)
 
-def arrival_staus():
+def arrival_status():
     sql = "UPDATE reservations SET status = %s WHERE arrival_date = %s AND status = %s"
     values = ["Arrival", datetime.date.today(), "Booked"]
     run_sql(sql, values)

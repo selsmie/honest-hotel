@@ -10,7 +10,7 @@ rooms_blueprint = Blueprint("rooms", __name__)
 @rooms_blueprint.route('/rooms')
 def rooms():
     rooms = room_repository.select_all()
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     return render_template('rooms/room.html', rooms=rooms)
 
 # NEW

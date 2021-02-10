@@ -10,7 +10,7 @@ guests_blueprint = Blueprint("guests", __name__)
 @guests_blueprint.route('/guests')
 def guests():
     guests = guest_repository.select_all()
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     return render_template('guests/guest.html', guests=guests)
 
 # NEW
@@ -24,6 +24,7 @@ def create_guest():
     name = request.form['name']
     new_guest = Guest(name)
     guest_repository.save(new_guest)
+    reservation_repository.arrival_status()
     return redirect('/guests')
 
 # EDIT

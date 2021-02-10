@@ -13,7 +13,7 @@ reservations_blueprint = Blueprint("reservations", __name__)
 @reservations_blueprint.route('/reservations')
 def reservations():
     reservations = reservation_repository.select_all()
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     today = datetime.date.today()
     return render_template('reservations/reservation.html', reservations=reservations, today=today)
 
@@ -21,7 +21,7 @@ def reservations():
 @reservations_blueprint.route('/reservations/arrivals')
 def arrivals():
     reservations = reservation_repository.arrivals()
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     return render_template('reservations/arrival.html', reservations=reservations)
 
 # NEW
@@ -42,7 +42,7 @@ def create_reservation():
     status = request.form['status']
     new_reservation = Reservation(guest, room, arrival_date, departure_date, status)
     reservation_repository.save(new_reservation)
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     return redirect('/reservations')
 
 # EDIT
@@ -65,6 +65,7 @@ def update_reservation(id):
     status = request.form['status']
     updated_reservation = Reservation(guest, room, arrival_date, departure_date, status, id)
     reservation_repository.update(updated_reservation)
+    reservation_repository.arrival_status()
     return redirect('/reservations')
 
 # DELETE
@@ -83,7 +84,7 @@ def delete_confirm(id):
 @ reservations_blueprint.route('/reservations/inhouse')
 def show_in_house():
     reservations = reservation_repository.in_house()
-    reservation_repository.arrival_staus()
+    reservation_repository.arrival_status()
     today = datetime.date.today()
     return render_template('reservations/inhouse.html', reservations=reservations, today=today)
 
