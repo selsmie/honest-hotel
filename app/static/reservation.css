@@ -233,3 +233,8 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+#new-res-name > select {
+    border-radius: 12px;
+    height: 30px;
+}
