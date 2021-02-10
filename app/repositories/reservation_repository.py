@@ -4,6 +4,7 @@ from models.guest import Guest
 from models.room import Room
 import repositories.room_repository as room_repository
 import repositories.guest_repository as guest_repository
+import datetime
 
 def save(reservation):
     sql = "INSERT INTO reservations (guest_id, room_id, arrival_date, departure_date, status) VALUES (%s, %s, %s, %s, %s) RETURNING id"
@@ -44,10 +45,15 @@ def update(reservation):
     values = [reservation.guest.id, reservation.room.id, reservation.arrival_date, reservation.departure_date, reservation.status, reservation.id]
     run_sql(sql, values)
 
+def arrival_staus():
+    sql = "UPDATE reservations SET status = %s WHERE arrival_date = %s"
+    values = ["Arrival", datetime.date.today()]
+    run_sql(sql, values)
+
 def arrivals():
     reservations = []
     sql = "SELECT * FROM reservations WHERE arrival_date = %s AND status = %s ORDER BY arrival_date ASC"
-    values = ["2021-02-11", "Arrival"]
+    values = [datetime.date.today(), "Arrival"]
     results = run_sql(sql, values)
     for row in results:
         guest = guest_repository.select(row['guest_id'])
@@ -87,7 +93,7 @@ def update_room(room, id):
 def total_arrivals():
     arrivals = 0
     sql = "SELECT * FROM reservations WHERE arrival_date = %s AND status = %s"
-    values = ['2021-02-11', "Arrival"]
+    values = [datetime.date.today(), "Arrival"]
     results = run_sql(sql, values)
     for row in results:
         arrivals += 1
@@ -96,7 +102,7 @@ def total_arrivals():
 def total_departures():
     departures = 0
     sql = "SELECT * FROM reservations WHERE departure_date = %s AND status = %s"
-    values = ['2021-02-11', "Checked In"]
+    values = [datetime.date.today(), "Checked In"]
     results = run_sql(sql, values)
     for row in results:
         departures += 1

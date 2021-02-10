@@ -38,6 +38,8 @@
       </div>
       <div id='new-res-status'>
         <select name="status" id="status" hidden>
+          <option value="Booked"
+          {% if reservation.status=="Booked" %}selected{% endif %}>Booked"</option>
           <option value="Arrival"
           {% if reservation.status=="Arrival" %}selected{% endif %}>Arrival</option>
           <option value="Checked In"

@@ -43,15 +43,15 @@ dep_date_2 = '2021-02-14'
 arr_date_3 = '2021-03-11'
 dep_date_3 = '2021-03-13'
 
-res_1 = Reservation(guest_1, room_0, arr_date_1, dep_date_2, "Arrival")
+res_1 = Reservation(guest_1, room_0, arr_date_1, dep_date_2, "Booked")
 reservation_repository.save(res_1)
-res_2 = Reservation(guest_2, room_0, arr_date_1, dep_date_2, "Arrival")
+res_2 = Reservation(guest_2, room_0, arr_date_1, dep_date_2, "Booked")
 reservation_repository.save(res_2)
-res_3 = Reservation(guest_3, room_0, arr_date_1, dep_date_1, "Arrival")
+res_3 = Reservation(guest_3, room_0, arr_date_1, dep_date_1, "Booked")
 reservation_repository.save(res_3)
-res_4 = Reservation(guest_4, room_0, arr_date_1, dep_date_1, "Arrival")
+res_4 = Reservation(guest_4, room_0, arr_date_1, dep_date_1, "Booked")
 reservation_repository.save(res_4)
-res_5 = Reservation(guest_5, room_0, arr_date_3, dep_date_3, "Arrival")
+res_5 = Reservation(guest_5, room_0, arr_date_3, dep_date_3, "Booked")
 reservation_repository.save(res_5)
 res_6 = Reservation(guest_6, room_5, '2021-02-09', '2021-02-11', "Arrival")
 reservation_repository.save(res_6)
