@@ -56,3 +56,11 @@ def stays(id):
     values = [guest.stays, guest.id]
     run_sql(sql, values)
 
+def search(name):
+    guest = None
+    sql = "SELECT * FROM guests WHERE name LIKE %s"
+    values = [name]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        guest = Guest(result['name'], result['stays'], result['preferences'], result['id'])
+    return guest

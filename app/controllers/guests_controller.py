@@ -56,3 +56,10 @@ def delete_confirm(id):
 def guest_preferences(id):
     guest = guest_repository.select(id)
     return render_template('guests/preference.html', guest=guest)
+
+# Search
+@guests_blueprint.route('/guests/search', methods=['POST'])
+def search_name():
+    search_name = request.form['search']
+    guest = guest_repository.search(search_name)
+    return render_template('guests/preference.html', guest=guest)

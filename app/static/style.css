@@ -99,3 +99,24 @@ h3 {
     padding-left: 10px;
 }
 
+.search {
+    margin-top: 10px;
+    justify-self: center;
+}
+
+.search > form > input {
+    border-radius: 12px;
+    height: 30px;
+    text-align: center;
+}
+
+.search > form > button {
+    border-radius: 12px;
+    height: 30px;
+    width: 80px;   
+}
+
+.search > form > button:hover {
+    background-color: rgb(52, 228, 252);
+    cursor: pointer;
+}

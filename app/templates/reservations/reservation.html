@@ -8,7 +8,17 @@
 </div>
 <hr>
 <main class='res-content'>
+
+  <div class='search'>
+    <form action="/reservations/search", method='POST'>
+      <label for="search">Guest Full Name</label>
+      <input type="search" name="search" id="search" autofocus>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
 {% for reservation in reservations %}
+
 <section class='details'>
   <p id='res-number'>Res #: {{reservation.id}} - <span>{{reservation.status}}</span></p>
   <a href="/guests/{{reservation.guest.id}}/preferences"><p id='res-name'>Name: {{reservation.guest.name}}  <i class="fa fa-arrow-circle-right fa-1x" aria-hidden="true"></i></p></a>

@@ -8,6 +8,13 @@
 </div>
 <hr>
 <main class='content'>
+  <div class='search'>
+    <form action="/guests/search", method='POST'>
+      <label for="search">Guest Full Name</label>
+      <input type="search" name="search" id="search" autofocus>
+      <button type="submit">Search</button>
+    </form>
+  </div>
   {% for guest in guests %}
     <section class='names'>
       <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">

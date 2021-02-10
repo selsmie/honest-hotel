@@ -122,3 +122,9 @@ def expected_occupancy():
     inh = total_inh_rooms()
     expected_occupancy = ((inh - total_departures() + total_arrivals()) / total_rooms) * 100
     return round(expected_occupancy, 1)
+
+def search(name):
+    reservations = select_all()
+    for reservation in reservations:
+        if reservation.guest.name == name:
+            return reservation
