@@ -46,8 +46,8 @@ def update(reservation):
     run_sql(sql, values)
 
 def arrival_staus():
-    sql = "UPDATE reservations SET status = %s WHERE arrival_date = %s"
-    values = ["Arrival", datetime.date.today()]
+    sql = "UPDATE reservations SET status = %s WHERE arrival_date = %s AND status = %s"
+    values = ["Arrival", datetime.date.today(), "Booked"]
     run_sql(sql, values)
 
 def arrivals():
