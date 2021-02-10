@@ -1,7 +1,7 @@
 Project Brief
 
 Hotel Booking Manager.
-Create a piece of softward to help manage guests, rooms and reservations.
+Create a piece of software to help manage guests, rooms and reservations.
 
 MVP
 
@@ -15,5 +15,5 @@ Possible extensions
 
 Add a date entry system to allow filtering of reservations by date.
 Be able to distinguish between returning guests and first timers.
-Add details to guests, including prefernce, notes & memorable information.
+Add details to guests, including preference, notes & memorable information.
 Create maximum occupancy for rooms to prevent more reservations being in one room at any time.
