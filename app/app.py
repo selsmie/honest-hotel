@@ -19,6 +19,7 @@ def main():
     departures = reservation_repository.total_departures()
     expected_occupancy = reservation_repository.expected_occupancy()
     current_occupancy = reservation_repository.current_occupancy()
+    reservation_repository.arrival_staus()
     return render_template('index.html', arrivals=arrivals, departures=departures, expected_occupancy=expected_occupancy, current_occupancy=current_occupancy)
 
 if __name__ == '__main__':

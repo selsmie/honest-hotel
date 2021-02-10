@@ -53,7 +53,10 @@ res_4 = Reservation(guest_4, room_0, arr_date_1, dep_date_1, "Booked")
 reservation_repository.save(res_4)
 res_5 = Reservation(guest_5, room_0, arr_date_3, dep_date_3, "Booked")
 reservation_repository.save(res_5)
-res_6 = Reservation(guest_6, room_5, '2021-02-09', '2021-02-11', "Arrival")
+res_6 = Reservation(guest_6, room_0, '2021-02-09', '2021-02-11', "Arrival")
 reservation_repository.save(res_6)
+
+res_7 = Reservation(guest_6, room_0, '2021-02-10', '2021-02-12', "Arrival")
+reservation_repository.save(res_7)
 
 pdb.set_trace()

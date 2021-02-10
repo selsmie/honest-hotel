@@ -2,6 +2,7 @@ from flask import Flask, redirect, render_template, request, Blueprint
 
 from models.guest import Guest
 import repositories.guest_repository as guest_repository
+import repositories.reservation_repository as reservation_repository
 
 guests_blueprint = Blueprint("guests", __name__)
 
@@ -9,6 +10,7 @@ guests_blueprint = Blueprint("guests", __name__)
 @guests_blueprint.route('/guests')
 def guests():
     guests = guest_repository.select_all()
+    reservation_repository.arrival_staus()
     return render_template('guests/guest.html', guests=guests)
 
 # NEW

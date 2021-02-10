@@ -104,6 +104,16 @@ h3 {
     justify-self: center;
 }
 
+.search > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search > form > label {
+    align-self: center;
+}
+
 .search > form > input {
     border-radius: 12px;
     height: 30px;
