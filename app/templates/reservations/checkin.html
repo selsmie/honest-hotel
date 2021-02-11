@@ -13,10 +13,13 @@
   <form action="/reservations/{{ reservation.id }}/checkin", method='POST'>
     <section id='checkin'>
       <div id='arr_date'>
-        <p value='{{reservation.id}}'>Current Date: {{reservation.arrival_date}}</p>
+        <p value='{{reservation.id}}'>Arrival Date: {{reservation.arrival_date}}</p>
       </div>
       <div id='dep-date'>   
-        <p value='{{reservation.id}}'>Current Date: {{reservation.departure_date}}</p>
+        <p value='{{reservation.id}}'>Departure Date: {{reservation.departure_date}}</p>
+      </div>
+      <div>
+        <p>Number of Nights: {{stay_length}}</p>
       </div>
       <div id='new-res-name'>
         <label for="name">Guest:</label>

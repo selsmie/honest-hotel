@@ -98,7 +98,8 @@ def check_in(id):
     reservation = reservation_repository.select(id)
     guest = guest_repository.select(reservation.guest.id)
     rooms = room_repository.select_available()
-    return render_template('reservations/checkin.html', reservation=reservation, guest= guest, rooms=rooms)
+    stay_length = reservation_repository.stay_length(id)
+    return render_template('reservations/checkin.html', reservation=reservation, guest= guest, rooms=rooms, stay_length=stay_length)
 
 @reservations_blueprint.route('/reservations/<id>/checkin', methods=['POST'])
 def confirm(id):
