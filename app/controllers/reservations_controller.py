@@ -30,7 +30,8 @@ def new_reservation():
     guests = guest_repository.select_all()
     room = room_repository.select_default()
     today = datetime.date.today()
-    return render_template('reservations/new.html', guests=guests, room=room, today=today)
+    tomorrow = today + datetime.timedelta(days=1)
+    return render_template('reservations/new.html', guests=guests, room=room, today=today, tomorrow=tomorrow)
 
 # CREATE
 @reservations_blueprint.route('/reservations', methods=['POST'])
