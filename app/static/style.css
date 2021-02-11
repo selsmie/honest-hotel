@@ -130,3 +130,14 @@ h3 {
     background-color: rgb(52, 228, 252);
     cursor: pointer;
 }
+
+.search > form > button {
+    border-radius: 12px;
+    height: 30px;
+    width: 80px;   
+}
+
+.search > form > button:hover {
+    background-color: rgb(52, 228, 252);
+    cursor: pointer;
+}

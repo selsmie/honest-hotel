@@ -1,4 +1,20 @@
 @media (max-width: 550px) {
+
+    #title {
+        max-height: 95%;
+    }
+
+    #header > h1 {
+        margin-top: 70px;
+    }
+
+    #stats {
+        margin-top: 50px;
+    }
+
+    .res-content {
+        max-height: 83%;
+    }
     
     .details {
         display: flex;
@@ -6,6 +22,7 @@
         flex-wrap: wrap;
         width: 300px;
         height: 250px;
+        justify-self: center;
     }
 
     .details-inh {

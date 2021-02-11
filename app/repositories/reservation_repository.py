@@ -15,8 +15,20 @@ def save(reservation):
 
 def select_all():
     reservations = []
-    sql = "SELECT * FROM reservations ORDER BY arrival_date, status ASC"
+    sql = "SELECT * FROM reservations ORDER BY status ASC, arrival_date"
     results = run_sql(sql)
+    for row in results:
+        guest = guest_repository.select(row['guest_id'])
+        room = room_repository.select(row['room_id'])
+        reservation = Reservation(guest, room, row['arrival_date'], row['departure_date'], row['status'], row['id'])
+        reservations.append(reservation)
+    return reservations
+
+def select_from_today(date):
+    reservations = []
+    sql = "SELECT * FROM reservations WHERE arrival_date >= %s ORDER BY arrival_date, status ASC"
+    values = [date]
+    results = run_sql(sql, values)
     for row in results:
         guest = guest_repository.select(row['guest_id'])
         room = room_repository.select(row['room_id'])
@@ -65,7 +77,7 @@ def arrivals():
 
 def in_house():
     reservations = []
-    sql = "SELECT * FROM reservations WHERE status = %s ORDER BY room_id"
+    sql = "SELECT * FROM reservations WHERE status = %s ORDER BY departure_date, room_id"
     values = ["Checked In"]
     results = run_sql(sql, values)
     for row in results:

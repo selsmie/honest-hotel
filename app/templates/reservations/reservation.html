@@ -11,9 +11,17 @@
 
   <div class='search'>
     <form action="/reservations/search", method='POST'>
-      <label for="search">Guest Full Name</label>
-      <input type="search" name="search" id="search" autofocus>
+      <label for="search">Find Guest: </label>
+      <input type="search" name="search" id="search" placeholder="Full Name" autofocus>
       <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class='search'>
+    <form action="/reservations" method='POST'>
+      <label for="date">Res From Date: </label>
+      <input type="date" name="date" id="date" autofocus>
+      <button type='submit'>Search</button>
     </form>
   </div>
 
