@@ -64,5 +64,5 @@ def guest_preferences(id):
 @guests_blueprint.route('/guests/search', methods=['POST'])
 def search_name():
     search_name = request.form['search']
-    guest = guest_repository.search(search_name)
+    guest = guest_repository.search(search_name.title())
     return render_template('guests/preference.html', guest=guest)

@@ -119,7 +119,7 @@ def check_out(id):
 @reservations_blueprint.route('/reservations/search', methods=['POST'])
 def search_name():
     search_name = request.form['search']
-    reservation = reservation_repository.search(search_name)
+    reservation = reservation_repository.search(search_name.title())
     guests = guest_repository.select_all()
     rooms = room_repository.select_all()
     return render_template('reservations/edit.html', reservation=reservation, guests=guests, rooms=rooms)
