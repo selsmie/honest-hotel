@@ -134,3 +134,9 @@ def search(name):
     for reservation in reservations:
         if reservation.guest.name == name:
             return reservation
+
+
+def stay_length(id):
+    res = select(id)
+    length = res.departure_date - res.arrival_date
+    return length.days

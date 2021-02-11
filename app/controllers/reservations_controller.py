@@ -54,7 +54,8 @@ def edit_reservation(id):
     guests = guest_repository.select_all()
     rooms = room_repository.select_all()
     today = datetime.date.today()
-    return render_template('reservations/edit.html', reservation=reservation, guests=guests, rooms=rooms, today=today)
+    stay_length = reservation_repository.stay_length(id)
+    return render_template('reservations/edit.html', reservation=reservation, guests=guests, rooms=rooms, today=today, stay_length=stay_length)
 
 # UPDATE
 @reservations_blueprint.route('/reservations/<id>', methods=['POST'])

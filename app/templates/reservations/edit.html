@@ -12,12 +12,13 @@
       <div id='arr_date'>
         <label for="arrival_date">Arrival Date</label>
         <input type="date" name="arrival_date" id="arrival_date" value='{{reservation.arrival_date}}' required>
-        
       </div>
       <div id='dep-date'>
         <label for="departure_date">Departure Date</label>
         <input type="date" name="departure_date" id="departure_date" value='{{reservation.departure_date}}' min="{{today}}" required>
-        
+      </div>
+      <div>
+        <p>Number of Nights: {{stay_length}}</p>
       </div>
       <div id='new-res-name'>
         <label for="name">Guest:</label>
