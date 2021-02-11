@@ -16,7 +16,7 @@
       </div>
       <div id='dep-date'>
         <label for="departure_date">Departure Date</label>
-        <input type="date" name="departure_date" id="departure_date" required>
+        <input type="date" name="departure_date" id="departure_date" min="{{today}}" required>
         <p value='{{reservation.id}}'>Current Date: {{reservation.departure_date}}</p>
       </div>
       <div id='new-res-name'>

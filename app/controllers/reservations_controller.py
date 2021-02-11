@@ -29,7 +29,8 @@ def arrivals():
 def new_reservation():
     guests = guest_repository.select_all()
     room = room_repository.select_default()
-    return render_template('reservations/new.html', guests=guests, room=room)
+    today = datetime.date.today()
+    return render_template('reservations/new.html', guests=guests, room=room, today=today)
 
 # CREATE
 @reservations_blueprint.route('/reservations', methods=['POST'])
@@ -51,7 +52,8 @@ def edit_reservation(id):
     reservation = reservation_repository.select(id)
     guests = guest_repository.select_all()
     rooms = room_repository.select_all()
-    return render_template('reservations/edit.html', reservation=reservation, guests=guests, rooms=rooms)
+    today = datetime.date.today()
+    return render_template('reservations/edit.html', reservation=reservation, guests=guests, rooms=rooms, today=today)
 
 # UPDATE
 @reservations_blueprint.route('/reservations/<id>', methods=['POST'])
