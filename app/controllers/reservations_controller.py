@@ -17,11 +17,11 @@ def reservations():
     today = datetime.date.today()
     return render_template('reservations/reservation.html', reservations=reservations, today=today)
 
-@reservations_blueprint.route('/reservations', methods=['POST'])
-def reservations_from_today():
-    date = request.form['date']
-    reservations = reservation_repository.select_from_today(date)
-    return render_template('reservations/reservation.html', reservations=reservations)
+# @reservations_blueprint.route('/reservations', methods=['POST'])
+# def reservations_from_today():
+#     date = request.form['date']
+#     reservations = reservation_repository.select_from_today(date)
+#     return render_template('reservations/reservation.html', reservations=reservations)
 
 # Arrivals
 @reservations_blueprint.route('/reservations/arrivals')

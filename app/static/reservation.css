@@ -9,6 +9,10 @@
     align-content: flex-start;
 }
 
+.res-content::-webkit-scrollbar {
+    display: none;
+  }
+
 .details {
     display: grid;
     grid-template-columns: 3fr 3fr 1fr;

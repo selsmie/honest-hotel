@@ -38,10 +38,10 @@ room_5 = Room(5, 0)
 room_repository.save(room_5)
 
 
-arr_date_1 = '2021-02-11'
-dep_date_1 = '2021-02-13'
-arr_date_2 = '2021-02-12'
-dep_date_2 = '2021-02-14'
+arr_date_1 = '2021-02-25'
+dep_date_1 = '2021-02-27'
+arr_date_2 = '2021-02-26'
+dep_date_2 = '2021-02-28'
 arr_date_3 = '2021-03-11'
 dep_date_3 = '2021-03-13'
 
@@ -55,10 +55,10 @@ res_4 = Reservation(guest_4, room_0, arr_date_1, dep_date_1, "Booked")
 reservation_repository.save(res_4)
 res_5 = Reservation(guest_5, room_0, arr_date_3, dep_date_3, "Booked")
 reservation_repository.save(res_5)
-res_6 = Reservation(guest_6, room_5, '2021-02-09', '2021-02-11', "Checked In")
+res_6 = Reservation(guest_6, room_5, '2021-02-23', '2021-02-25', "Checked In")
 reservation_repository.save(res_6)
 
-res_7 = Reservation(guest_7, room_4, '2021-02-10', '2021-02-12', "Checked In")
+res_7 = Reservation(guest_7, room_4, '2021-02-24', '2021-02-26', "Checked In")
 reservation_repository.save(res_7)
 
 pdb.set_trace()

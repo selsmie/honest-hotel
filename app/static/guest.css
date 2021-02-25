@@ -37,13 +37,17 @@
 
 .content {
     display: grid;
-    overflow: scroll;
+    overflow: auto;
     height: 500px;
     justify-content: center;
     border: 3px solid black;
     color: white;
     margin: 5px;
 }
+
+.content::-webkit-scrollbar {
+    display: none;
+  }
 
 .names {
     display: grid;
