@@ -1,8 +1,9 @@
 # Creating Honest Hotel Booking Manager
 
+With several briefs provided for our first projects with CodeClan, I instantly created my own brief based upon a hotel reservation system. This was a project that allowed me to delve deep into my past experiences to try and make an application that was simple, intuitive and realistic.
+
 # Project Brief
 
-# Hotel Booking Manager.
 Create a piece of software to help manage guests, rooms and reservations.
 
 # MVP
