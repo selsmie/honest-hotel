@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from models.guest import Guest
-import repositories.guest_repository as guest_repository
 import repositories.reservation_repository as reservation_repository
 
 def save(guest):

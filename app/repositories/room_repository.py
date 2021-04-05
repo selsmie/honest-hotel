@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from models.room import Room
-import repositories.room_repository as room_repository
 import repositories.reservation_repository as reservation_repository
 
 import pdb
